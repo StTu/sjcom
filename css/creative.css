@@ -16,7 +16,7 @@ body {
 
 hr {
     max-width: 50px;
-    border-color: #11283c;
+    border-color: #000;
     border-width: 3px;
 }
 .divider-vertical {
@@ -30,7 +30,7 @@ hr.light {
 }
 
 a {
-    color: #11283c;
+    color: #000;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -38,7 +38,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #B82601;
 }
 
 h1,
@@ -57,7 +57,7 @@ p {
 }
 
 .bg-primary {
-    background-color: #11283c;
+    background-color: #000;
 }
 
 .bg-dark {
@@ -94,12 +94,12 @@ aside {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: #11283c;
+    color: #000;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: #B82601;
 }
 
 .navbar-default .nav > li>a,
@@ -112,24 +112,24 @@ aside {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #11283c;
+    color: #000;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #11283c!important;
-    background-color: transparent;
+    color: #000!important;
+    background-color: #000;
 }
 
 .navbar-default .nav > li.active>a:hover,
 .navbar-default .nav>li.active>a:focus:hover {
-    background-color: transparent;
+    background-color: #000;
 }
 
 @media(min-width:768px) {
     .navbar-default {
         border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        background-color: #000;
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -158,12 +158,12 @@ aside {
 
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 14px;
-        color: #11283c;
+        color: #000;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
     .navbar-default.affix .navbar-header .navbar-brand:focus {
-        color: #eb3812;
+        color: #B82601;
     }
 
     .navbar-default.affix .nav > li>a,
@@ -173,7 +173,7 @@ aside {
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #11283c;
+        color: #000;
     }
 }
 
@@ -213,7 +213,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 300;
-    color: rgba(255,255,255,.7);
+    color: rgba(255,255,255,1);
 }
 
 @media(min-width:768px) {
@@ -328,7 +328,7 @@ header .header-content .header-content-inner p {
 }
 
 .text-primary {
-    color: #11283c;
+    color: #000;
 }
 
 .no-gutter > [class*=col-] {
@@ -390,9 +390,9 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-    border-color: #11283c;
+    border-color: #000;
     color: #fff;
-    background-color: #11283c;
+    background-color: #000;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -433,12 +433,12 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #11283c;
-    background-color: #11283c;
+    border-color: #000;
+    background-color: #000;
 }
 
 .btn-primary .badge {
-    color: #11283c;
+    color: #000;
     background-color: #fff;
 }
 
@@ -478,4 +478,14 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.header-content a{
+    color: #fff;
+}
+
+.header-content a:hover, a:focus{
+    text-decoration: none;
+    font-weight: 900;
+    color: #fff;
 }

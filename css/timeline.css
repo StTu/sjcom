@@ -95,6 +95,7 @@
 }
 
 .timeline > li.timeline-inverted > .timeline-panel {
+    width:100%;
 }
 
 .timeline > li.timeline-inverted > .timeline-panel:before {
