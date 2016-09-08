@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>{ Stuart James }</title>
+		<description>Research page for Stuart James</description>
+		<link>https://stuart-james.com</link>
+		<atom:link href="https://stuart-james.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Transferring old book image style to real world photos</title>
+				
+				
+					<description>&lt;p&gt;
+Neural Style Transfer [Gatys&#39;15] has become a popular area of research and with public  applications such as Prisma, but earlier this week I wanted to answer the question does it really work for understanding the larger style. In contrast to [Wang&#39;13] where they learnt an artistic style how does it compare. The British Library Flickr 1m+ dataset [BL&#39;13] provides an interesting application of this. Where there is an inherent style for transferring. 
+&lt;/p&gt;
+
+
+</description>
+				
+				<pubDate>Fri, 26 Aug 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/08/26/british-library-dataset-style-transfer.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/08/26/british-library-dataset-style-transfer.html</guid>
+			</item>
+		
+			<item>
+				<title>Cheddar Gorge Relish Run</title>
+				
+				
+					<description>&lt;p&gt;
+As I continue my crazy running activities I take another shot at the Relish Run Cheddar Gorge half marathon. A great route that takes you up over the hills surrounding Cheddar and past the trig point with views over Weston-super-Mare, my home town. 
+&lt;/p&gt;
+
+
+</description>
+				
+				<pubDate>Sun, 21 Aug 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/08/21/cheddar-gorge-relish-run.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/08/21/cheddar-gorge-relish-run.html</guid>
+			</item>
+		
+			<item>
+				<title>San Francisco Second Half Marathon</title>
+				
+				
+					<description>&lt;p&gt;
+I&#39;ve been running for a few years now, doing as many runs as I can a year. Granted my training routine isn&#39;t very vigorous, but just doing the run is great fun. After attending SIGGRAPH this year, I passed through San Francisco on my drive up the coast. As any avid runner would, if there a race you can do you do. So I ran the San Francisco Second Half Marathon!
+&lt;/p&gt;
+
+
+</description>
+				
+				<pubDate>Sun, 31 Jul 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/07/31/San-Francisco-Second-Half.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/07/31/San-Francisco-Second-Half.html</guid>
+			</item>
+		
+			<item>
+				<title>Getting back to books</title>
+				
+				
+					<description>&lt;p&gt;
+When I was younger I never got into reading novels sadly. I have tried throughout my adult life to try to get into them, but sadly it is always a challenge to stick with them. Often I find the demands of my work a massive distraction result in me not wanting to sit and read more. I dabbled into Audiobooks that I recommend massively, but loosing my commute broke this. So I&#39;m going to try listen while cycling to work! 
+&lt;/p&gt;
+
+
+</description>
+				
+				<pubDate>Thu, 23 Jun 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/06/23/getting-back-to-books.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/06/23/getting-back-to-books.html</guid>
+			</item>
+		
+			<item>
+				<title>29 going on 30</title>
+				
+				
+					<description>A mini-celebration of reflection as I hit my 29th year floating around the sun. Although I may not of achieved everything I have set out todo in this decade I have a lot of achievements both career / academically and life through running etc.
+
+</description>
+				
+				<pubDate>Tue, 14 Jun 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/06/14/twenty-nine-going-on-thirty.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/06/14/twenty-nine-going-on-thirty.html</guid>
+			</item>
+		
+			<item>
+				<title>Working with the British Library Dataset</title>
+				
+				
+					<description>&lt;p&gt;Earlier this year &lt;a href=&quot;http://tim.weyri.ch&quot;&gt;Tim Weyrich&lt;/a&gt; directed me onto a dataset published by the British Library and since then my research has focused heavily around this. Within Computer Vision it is unusual to get a large dataset not skewed to achieve a specific research goal. Sometimes datasets can be repurposed, but this is requires extensive effort to get the data in its rawest form.&lt;/p&gt;
+
+&lt;p&gt;The British Library dataset is a quite literally a &quot;dump&quot; of all the unknown to OCR elements from the book scanning performed by Microsoft. Therefore is not just a collection of line art imagery, but also of elaborate charachters or section embroidery.&lt;/p&gt;
+
+
+
+</description>
+				
+				<pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/04/20/working-with-british-library-dataset.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/04/20/working-with-british-library-dataset.html</guid>
+			</item>
+		
+			<item>
+				<title>Moving to Jekyll</title>
+				
+				
+					<description>&lt;p&gt;After many (and many) years of using dynamic CMS, I have decided to take the plunge and move to an old school methodology -- static websites. Well when I say &quot;static&quot;, I mean offline generated site, I&#39;m not crazy after all. I don&#39;t want to spend the next years of my life changing tiny global settings on my website, but more I just don&#39;t see the need to actually have a heavy database driven site running all the time, when to be honest I don&#39;t often update the site.&lt;/p&gt;
+
+
+</description>
+				
+				<pubDate>Thu, 14 Apr 2016 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2016/04/14/moving-to-jekyll.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2016/04/14/moving-to-jekyll.html</guid>
+			</item>
+		
+			<item>
+				<title>Why I am a resolution junky</title>
+				
+				
+					<description>&lt;p&gt;I have been coding for many years now (scarily &amp;gt; 15&amp;nbsp;years), I have always aimed to get higher and higher resolution screens or alternatively multiple screens. Sadly as mentioned in an earlier blog post the computer I am using at the moment is a desktop replacement&amp;nbsp;laptop with a dying screen so I purchased a 27&quot; 2560x1440, not quite my laptops 3200x1800 but still pretty reasonable and great for late night coding! The above is an example of me geeking out, library coding and demo/test rig&amp;nbsp;coding in parallel&lt;/p&gt;</description>
+				
+				<pubDate>Mon, 20 Oct 2014 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/tech/2014/10/20/why-i-am-a-resolution-junky.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/tech/2014/10/20/why-i-am-a-resolution-junky.html</guid>
+			</item>
+		
+			<item>
+				<title>New Toys Sept’14 Part 1 of 2 – BenQ BL2710PT 27” WQHD</title>
+				
+				
+					<description>&lt;p&gt;After having my beast of a desktop replacement laptop (ASUS n73sv) for a few years now the screen has become a bit temperamental. This and the fact I am using Lenovo Yoga2 Pro ultra book more and more (due to portability/screen res) has resulted in a void in powerful home processing.&lt;/p&gt;
+
+&lt;p&gt;Therefore I felt to solve this problem I would get a beefy screen to allow me to work more comfortably at home and in theory write more of my thesis (instead of this blog… shh). I wanted something above the 1920x1080 resolution, since I know that two screens isn’t an option used in conjunction with the old ASUS. Two competitors came to the fore the BenQ BL2710PT and a Dell, oddly the Dell had very bad reversed when used over HDMI and you have to do a lot of hard work to get over the locked down 1080p. So I opted for the BenQ and am very happy with the results.&lt;/p&gt;
+
+
+
+</description>
+				
+				<pubDate>Fri, 26 Sep 2014 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</guid>
+			</item>
+		
+			<item>
+				<title>libSVM linear kernel normalisation</title>
+				
+				
+					<description>&lt;p&gt;I have used a variety of tools for binary, multiclass and even incremental SVM problems, today I found something quite nice in binary case for &lt;a href=&quot;http://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libSVM&lt;/a&gt;, although potentially a source of confusion.&lt;/p&gt;&lt;p&gt;It is common in machine learning to apply a sigmoid function to normalise the boundaries of a problem, this can by empirically defining the upper and lower bound or through experimentation. Within &lt;a href=&quot;http://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libSVM&lt;/a&gt; they do this through experimentation, that is great to save you some time. The only thing to remember is it means through the use of random and cross validation with small sets of data, you are likely to get different results on each run.&lt;/p&gt;&lt;p&gt;So the function to consider is this:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 07 Jul 2014 00:00:00 +0100</pubDate>
+				<link>https://stuart-james.com/2014/07/07/libsvm-linear-kernel-normalisation.html</link>
+				<guid isPermaLink="true">https://stuart-james.com/2014/07/07/libsvm-linear-kernel-normalisation.html</guid>
+			</item>
+		
+	</channel>
+</rss>

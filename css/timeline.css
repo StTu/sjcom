@@ -149,7 +149,14 @@
 .timeline-body > ul {
     margin-bottom: 0;
 }
+.timeline-body > p{
+    text-align: justify;
+}
+
 
 .timeline-body > p + p {
-    margin-top: 5px;
+    /*margin-top: 5px;*/
+}
+.timeline-heading >p {
+    margin-bottom:0px;
 }
