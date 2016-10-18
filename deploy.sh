@@ -6,8 +6,8 @@ mogrify -resize 200x -format png */*.png
 mogrify -resize 200x -format jpg */*.jpg
 cd ..
 cd images/
-mogrify -resize '400x>' -format png */*.png
-mogrify -resize '400x>' -format jpg */*.jpg
+#mogrify -resize '400x>' -format png */*.png
+#mogrify -resize '400x>' -format jpg */*.jpg
 cd ..
 git add *
 val=date
