@@ -11,7 +11,7 @@
 				
 				
 					<description>&lt;p&gt;
-Neural Style Transfer [Gatys&#39;15] has become a popular area of research and with public  applications such as Prisma, but earlier this week I wanted to answer the question does it really work for understanding the larger style. In contrast to [Wang&#39;13] where they learnt an artistic style how does it compare. The British Library Flickr 1m+ dataset [BL&#39;13] provides an interesting application of this. Where there is an inherent style for transferring. 
+Style transfer has become a popular area of research and with public applications such as Prisma based on Neural Style Transfer [Gatys'15]. Earlier this week I wanted to answer the question does it really work for understanding the larger style and context. In contrast to [Wang'13] where they learnt an artistic stroke style, how does it compare. The British Library Flickr 1m+ dataset [BL'13] provides an interesting application of this, where there is an inherent style for transferring. 
 &lt;/p&gt;
 
 
@@ -43,7 +43,7 @@ As I continue my crazy running activities I take another shot at the Relish Run 
 				
 				
 					<description>&lt;p&gt;
-I&#39;ve been running for a few years now, doing as many runs as I can a year. Granted my training routine isn&#39;t very vigorous, but just doing the run is great fun. After attending SIGGRAPH this year, I passed through San Francisco on my drive up the coast. As any avid runner would, if there a race you can do you do. So I ran the San Francisco Second Half Marathon!
+I've been running for a few years now, doing as many runs as I can a year. Granted my training routine isn't very vigorous, but just doing the run is great fun. After attending SIGGRAPH this year, I passed through San Francisco on my drive up the coast. As any avid runner would, if there a race you can do you do. So I ran the San Francisco Second Half Marathon!
 &lt;/p&gt;
 
 
@@ -59,7 +59,7 @@ I&#39;ve been running for a few years now, doing as many runs as I can a year. G
 				
 				
 					<description>&lt;p&gt;
-When I was younger I never got into reading novels sadly. I have tried throughout my adult life to try to get into them, but sadly it is always a challenge to stick with them. Often I find the demands of my work a massive distraction result in me not wanting to sit and read more. I dabbled into Audiobooks that I recommend massively, but loosing my commute broke this. So I&#39;m going to try listen while cycling to work! 
+When I was younger I never got into reading novels sadly. I have tried throughout my adult life to try to get into them, but sadly it is always a challenge to stick with them. Often I find the demands of my work a massive distraction result in me not wanting to sit and read more. I dabbled into Audiobooks that I recommend massively, but loosing my commute broke this. So I'm going to try listen while cycling to work! 
 &lt;/p&gt;
 
 
@@ -104,7 +104,7 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 				<title>Moving to Jekyll</title>
 				
 				
-					<description>&lt;p&gt;After many (and many) years of using dynamic CMS, I have decided to take the plunge and move to an old school methodology -- static websites. Well when I say &quot;static&quot;, I mean offline generated site, I&#39;m not crazy after all. I don&#39;t want to spend the next years of my life changing tiny global settings on my website, but more I just don&#39;t see the need to actually have a heavy database driven site running all the time, when to be honest I don&#39;t often update the site.&lt;/p&gt;
+					<description>&lt;p&gt;After many (and many) years of using dynamic CMS, I have decided to take the plunge and move to an old school methodology -- static websites. Well when I say &quot;static&quot;, I mean offline generated site, I'm not crazy after all. I don't want to spend the next years of my life changing tiny global settings on my website, but more I just don't see the need to actually have a heavy database driven site running all the time, when to be honest I don't often update the site.&lt;/p&gt;
 
 
 </description>
