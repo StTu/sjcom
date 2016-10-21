@@ -32,6 +32,6 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://stuart-james.com",
+  "start_url": "http://stuart-james.com",
   "display": "standalone"
 }
