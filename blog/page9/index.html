@@ -208,12 +208,24 @@
   <a href="/2013/03/29/the-old-windows-8-argument-on-a-non-touch-laptop.html">
     <strong>The old Windows 8 argument on a non-touch laptop</strong>
   </a>
-  <br class="visible-xs-block">
   <small><a href="/2013/03/29/the-old-windows-8-argument-on-a-non-touch-laptop.html#disqus_thread">Comments</a></small>
-</h4>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+    <p>We have already heard many arguments about Windows 8 with and without touch, the new “metro” UI and the missing start button. I dont intend to add anything to this I think it really comes down to your personal preference. In my case I found it awkward to use so wanted a solution to make things better.</p>
+<p>My solution is that developed by StarDock this was brought to my attention by <a href="http://winsupersite.com/">Paul Thurrott</a> on <a href="http://twit.tv/ww">Windows Weekly</a>.</p>
+<h4>Start8</h4>
+<p><a href="http://www.stardock.com/products/start8/"><img style="border: 0px currentcolor; margin-right: 0px; margin-left: 0px; display: inline;" title="Start8" alt="Start8" src="http://stuartjames.info/Data/Sites/5/media/wlw/start8.png" height="240" width="199" /></a></p>
+<h4>ModernMix</h4>
+<p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/modernmix.png"><img style="border: 0px currentcolor; margin-right: 0px; margin-left: 0px; display: inline;" title="ModernMix" alt="ModernMix" src="http://stuartjames.info/Data/Sites/5/media/wlw/modernmix_thumb.png" height="480" width="562" /></a></p>
+<p>ModernMix works amazing allowing you to be able to run “Metro” apps in Windows. I have always played games in Windows so the idea of using full screen will take me a long time to grasp, and ModernMix allows me to completely avoid that!</p>
+<p><br /><a href="http://stuartjames.info/Journal/the-old-windows-8-argument-on-a-non-touch-laptop.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/the-old-windows-8-argument-on-a-non-touch-laptop.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
 
 <!-- Post List End -->
-
           
             
 <!-- Post List Start -->
@@ -229,12 +241,36 @@
   <a href="/2013/03/29/boost-graph-visualisation-using-dot-and-graphviz.html">
     <strong>Boost Graph Visualisation using dot and Graphviz</strong>
   </a>
-  <br class="visible-xs-block">
   <small><a href="/2013/03/29/boost-graph-visualisation-using-dot-and-graphviz.html#disqus_thread">Comments</a></small>
-</h4>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+    <p>Debugging graphs can sometimes be annoying a useful way is to visualise it. No problem Boost has not only a graph solution but a way to visualise it too.</p>
+<p>It is really simple first the header,</p>
+<pre class="code"><span style="background: white; color: blue;">#include </span><span style="background: white; color: #a31515;">&lt;boost/graph/graphviz.hpp&gt;</span></pre>
+<p>Define the name of each node, easily done by an array</p>
+<pre class="code"><span style="background: white; color: blue;">const </span><span style="background: white; color: black;">std::</span><span style="background: white; color: #2b91af;">string </span><span style="background: white; color: black;">names [] = {</span><span style="background: white; color: #a31515;">"A"</span><span style="background: white; color: black;">, </span><span style="background: white; color: #a31515;">"B"</span><span style="background: white; color: black;">, </span><span style="background: white; color: #a31515;">"C"</span><span style="background: white; color: black;">, </span><span style="background: white; color: #a31515;">"D"</span><span style="background: white; color: black;">, </span><span style="background: white; color: #a31515;">"E" </span><span style="background: white; color: black;">} ;</span></pre>
+<p>or via a vector</p>
+<pre class="code"><span style="background: white; color: black;">std::</span><span style="background: white; color: #2b91af;">vector</span><span style="background: white; color: black;">&lt;std::</span><span style="background: white; color: #2b91af;">string</span><span style="background: white; color: black;">&gt; names;
+</span><span style="background: white; color: blue;">for </span><span style="background: white; color: black;">(</span><span style="background: white; color: blue;">int </span><span style="background: white; color: black;">i = 0 ; i &lt; _nodes.size() ; i++){
+    std::</span><span style="background: white; color: #2b91af;">stringstream </span><span style="background: white; color: black;">ss;
+    names.push_back(ss.str());
+}</span></pre>
+<p>Then save it out</p>
+<pre class="code"><span style="background: white; color: black;">std::</span><span style="background: white; color: #2b91af;">ofstream </span><span style="background: white; color: black;">dmp;
+dmp.open(</span><span style="background: white; color: #a31515;">"dmp.dot"</span><span style="background: white; color: black;">);
+boost::write_graphviz(dmp,g, boost::make_label_writer(&amp;names[0]));</span></pre>
+<p>And then the result:</p>
+<p> </p>
+<p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/graph_dot_undirected.png"><img style="border: 0px currentcolor; display: inline;" title="Graph_Dot_Undirected" alt="Graph_Dot_Undirected" src="http://stuartjames.info/Data/Sites/5/media/wlw/graph_dot_undirected_thumb.png" height="240" width="111" /></a> <a href="http://stuartjames.info/Data/Sites/5/media/wlw/graph_dot_directed.png"><img style="border: 0px currentcolor; display: inline;" title="Graph_Dot_Directed" alt="Graph_Dot_Directed" src="http://stuartjames.info/Data/Sites/5/media/wlw/graph_dot_directed_thumb.png" height="240" width="110" /></a></p>
+<p>Left undirected graph, right directed hence the arrow heads.</p>
+<p><br /><a href="http://stuartjames.info/Journal/boost-graph-visualisation-using-dot-and-graphviz.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/boost-graph-visualisation-using-dot-and-graphviz.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
 
 <!-- Post List End -->
-
           
             
 <!-- Post List Start -->
@@ -250,12 +286,27 @@
   <a href="/2013/03/17/mojoportal-inline-editing-easy-user-content-editing.html">
     <strong>mojoPortal Inline Editing, easy user content editing!</strong>
   </a>
-  <br class="visible-xs-block">
   <small><a href="/2013/03/17/mojoportal-inline-editing-easy-user-content-editing.html#disqus_thread">Comments</a></small>
-</h4>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+    <p>I have always liked the style of mojoPortal making it easy to understand what you are editing. The approach is quite in contrast to other CMS where you end up with a front house and back house style system, mojoPortal does a nice job of merging this.</p>
+<p>With version 2.3.9.6 it gets even better with inline editing, so for example take my home home page.</p>
+<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_13.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_13.png" width="640" height="456" /></a></p>
+<p>&nbsp;</p>
+<p>If you have completed the update and if you have CKEditor as your content editor you will notice little locks appearing on your page when in content editor view</p>
+<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_14.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_14.png" width="640" height="279" /></a></p>
+<p>If you click the lock, it will unlock(<a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_15.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_15.png" width="19" height="18" /></a>), you can then click on the content for editing and your page will look like this:</p>
+<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_16.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_16.png" width="640" height="462" /></a></p>
+<p>&nbsp;</p>
+<p>Now if this isn’t easy for users to understand what is? Well done mojoPortal for integration of another useful feature.</p>
+<p><br /><a href="http://stuartjames.info/Journal/mojoportal-inline-editing-easy-user-content-editing.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/mojoportal-inline-editing-easy-user-content-editing.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
 
 <!-- Post List End -->
-
           
             
 <!-- Post List Start -->
@@ -271,12 +322,28 @@
   <a href="/2013/01/27/windows-intune-a-must-for-smb-administrators.html">
     <strong>Windows Intune a must for SMB administrators</strong>
   </a>
-  <br class="visible-xs-block">
   <small><a href="/2013/01/27/windows-intune-a-must-for-smb-administrators.html#disqus_thread">Comments</a></small>
-</h4>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+    <p>With the push of large amount of cloud services from many different vendors it takes time to explore and see what is now available. Today I did a brief excursion into Windows Intune.</p>
+<p>Intune provides system administrators to monitor computers within their organisation. Allowing you to install software from a common pool force policies and keep an eye on computers that may be coming to the end of their life or just short on storage.</p>
+<p>I am just getting started but thought would share some screenshots.</p>
+<h5>Admin Panel</h5>
+<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_10.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_10.png" height="380" width="642" /></a></p>
+<h5>Some computer hardware info:</h5>
+<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_11.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_11.png" height="482" width="547" /></a></p>
+<h5>User web view (I do love the tiles layout to be clean and elegant):</h5>
+<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_12.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_12.png" height="376" width="642" /></a></p>
+<p>I have done some experiments adding up an installer to the cloud storage is easy to do, and seems to work quite well. If you have a pool of computers seems like a nice offering. I had looked into alternatives such as that provided by LogMeIn, but the price point is a bit of a put off and the integration was somewhat limited.</p>
+<p>I have still to get my Surface or other mobile devices into Intune, but sure will get some nice info out of the 30 day trial that will probably turn into a tool inside the company’s IT I manage(JCS Technology).</p>
+<p><br /><a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
 
 <!-- Post List End -->
-
           
             
 <!-- Post List Start -->
@@ -292,12 +359,37 @@
   <a href="/2013/01/26/performance-i-just-don-t-understand-win-2008-vs-win-2012-on-aws.html">
     <strong>Performance I just don’t understand Win 2008 vs Win 2012 on AWS</strong>
   </a>
-  <br class="visible-xs-block">
   <small><a href="/2013/01/26/performance-i-just-don-t-understand-win-2008-vs-win-2012-on-aws.html#disqus_thread">Comments</a></small>
-</h4>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+    <p>After having some weird connection issues over the last week since migrating my blog and portfolio to an alternative configuration instance based on Windows Server 2008 I decided to do a load test to see whether this was a bigger issue than I expected. The results I just cant explain.</p>
+<p>&nbsp;</p>
+<h4 align="left">Windows Server 2008, IIS Installed only with .NET4</h4>
+<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2008_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2008_Performance" border="0" alt="AWS_Win2008_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2008_performance_thumb.png" width="642" height="297" /></a></p>
+<p align="left">&nbsp;</p>
+<h4 align="left">Windows Server 2012, IIS Installed only with .NET4</h4>
+<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_Performance" border="0" alt="AWS_Win2012_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_performance_thumb.png" width="642" height="297" /></a></p>
+<p align="left">&nbsp;</p>
+<p align="left">As can be seen from the 2008 graph the server fell over very quickly and took a very long time to recover. After looking at this went to the CPU load and found the answer:</p>
+<h4 align="left">Windows Server 2008, IIS Installed only with .NET4</h4>
+<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2008_cpuload.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2008_CPULoad" border="0" alt="AWS_Win2008_CPULoad" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2008_cpuload_thumb.png" width="642" height="276" /></a></p>
+<h4 align="left">Windows Server 2012, IIS Installed only with .NET4</h4>
+<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_cpuload.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_CPULoad" border="0" alt="AWS_Win2012_CPULoad" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_cpuload_thumb.png" width="642" height="275" /></a></p>
+<p align="left">&nbsp;</p>
+<p align="left">This wasn’t the profile of the CPU when I first set up the instance, I have no idea what has caused the development of this maxed CPU issue. Will have to look into more, but for the moment am back on 2012! Does demonstrate the importance of setting up alarms though, another nice functionality on the AWS platform.</p>
+<p>&nbsp;</p>
+<p>Edit:</p>
+<h5>Maximum Load Test</h5>
+<p>I have also done a max load test just to see how much the server could take, maxes out about 70 users. Tested against blog, so all img,js and css are additional calls wrapped into one user call. Granted when server hits max capacity is essentially unresponsive.</p>
+<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_max_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_Max_Performance" border="0" alt="AWS_Win2012_Max_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_max_performance_thumb.png" width="642" height="281" /></a></p>
+<p><br /><a href="http://stuartjames.info/Journal/performance-i-just-don’t-understand-win-2008-vs-win-2012-on-aws.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/performance-i-just-don’t-understand-win-2008-vs-win-2012-on-aws.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
 
 <!-- Post List End -->
-
           
         </div>
 
@@ -393,6 +485,50 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
 
 
+  
+
+  <!-- Google Tracking Id Start -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-7794553-6', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tracking Id End -->
+
+  
+
+
+
+
+  <!-- Disqus -->
+
+  
+
+  
+
+    <!-- Comments Counter Start -->
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'panossakkos'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+    <!-- Comments Counter End -->
+
+  
 
 
 

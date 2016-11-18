@@ -31,6 +31,8 @@
     
   
     
+  
+    
       <url>
         <loc>http://stuart-james.com/</loc>
         
@@ -41,6 +43,8 @@
           
         
        </url>
+    
+  
     
   
     
@@ -284,7 +288,7 @@
   
   
     <url>
-      <loc>http://stuart-james.com/2016/08/26/british-library-dataset-style-transfer.html</loc>
+      <loc>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.html</loc>
       
         <lastmod>2016-08-26T00:00:00+01:00</lastmod>
       
@@ -293,7 +297,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/08/21/cheddar-gorge-relish-run.html</loc>
+      <loc>http://stuart-james.com/running/2016/08/21/cheddar-gorge-relish-run.html</loc>
       
         <lastmod>2016-08-21T00:00:00+01:00</lastmod>
       
@@ -302,7 +306,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/07/31/San-Francisco-Second-Half.html</loc>
+      <loc>http://stuart-james.com/running/2016/07/31/San-Francisco-Second-Half.html</loc>
       
         <lastmod>2016-07-31T00:00:00+01:00</lastmod>
       
@@ -311,7 +315,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/06/23/getting-back-to-books.html</loc>
+      <loc>http://stuart-james.com/life/2016/06/23/getting-back-to-books.html</loc>
       
         <lastmod>2016-06-23T00:00:00+01:00</lastmod>
       
@@ -320,7 +324,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/06/14/twenty-nine-going-on-thirty.html</loc>
+      <loc>http://stuart-james.com/life/2016/06/14/twenty-nine-going-on-thirty.html</loc>
       
         <lastmod>2016-06-14T00:00:00+01:00</lastmod>
       
@@ -329,7 +333,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/04/20/working-with-british-library-dataset.html</loc>
+      <loc>http://stuart-james.com/research/2016/04/20/working-with-british-library-dataset.html</loc>
       
         <lastmod>2016-04-20T00:00:00+01:00</lastmod>
       
@@ -338,7 +342,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2016/04/14/moving-to-jekyll.html</loc>
+      <loc>http://stuart-james.com/tech/2016/04/14/moving-to-jekyll.html</loc>
       
         <lastmod>2016-04-14T00:00:00+01:00</lastmod>
       
@@ -365,7 +369,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/07/07/libsvm-linear-kernel-normalisation.html</loc>
+      <loc>http://stuart-james.com/research/2014/07/07/libsvm-linear-kernel-normalisation.html</loc>
       
         <lastmod>2014-07-07T00:00:00+01:00</lastmod>
       
@@ -374,7 +378,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/06/24/wolfram-programming-cloud-beta-goes-live.html</loc>
+      <loc>http://stuart-james.com/tech/2014/06/24/wolfram-programming-cloud-beta-goes-live.html</loc>
       
         <lastmod>2014-06-24T00:00:00+01:00</lastmod>
       
@@ -383,7 +387,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/05/15/why-you-should-come-to-surrey-university.html</loc>
+      <loc>http://stuart-james.com/life/2014/05/15/why-you-should-come-to-surrey-university.html</loc>
       
         <lastmod>2014-05-15T00:00:00+01:00</lastmod>
       
@@ -392,7 +396,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/05/15/intro-to-climbing-@craggyisland.html</loc>
+      <loc>http://stuart-james.com/climbing/2014/05/15/intro-to-climbing-@craggyisland.html</loc>
       
         <lastmod>2014-05-15T00:00:00+01:00</lastmod>
       
@@ -410,7 +414,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/04/20/look-at-that-text-isn-t-it-tiny-oh-its-on-the-lenovo-yoga-2-pro.html</loc>
+      <loc>http://stuart-james.com/tech/2014/04/20/look-at-that-text-isn-t-it-tiny-oh-its-on-the-lenovo-yoga-2-pro.html</loc>
       
         <lastmod>2014-04-20T00:00:00+01:00</lastmod>
       
@@ -419,7 +423,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/03/12/visualise-the-output-of-.dot-file-using-graphviz-dot-(linux).html</loc>
+      <loc>http://stuart-james.com/code/2014/03/12/visualise-the-output-of-.dot-file-using-graphviz-dot-(linux).html</loc>
       
         <lastmod>2014-03-12T00:00:00+00:00</lastmod>
       
@@ -428,7 +432,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/02/22/windows-phone-great-platform-but-not-quite-there.html</loc>
+      <loc>http://stuart-james.com/tech/2014/02/22/windows-phone-great-platform-but-not-quite-there.html</loc>
       
         <lastmod>2014-02-22T00:00:00+00:00</lastmod>
       
@@ -437,7 +441,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/01/31/getting-to-grips-with-the-facebook-api-with-php-and-javascript-sdk-part-1.html</loc>
+      <loc>http://stuart-james.com/code/2014/01/31/getting-to-grips-with-the-facebook-api-with-php-and-javascript-sdk-part-1.html</loc>
       
         <lastmod>2014-01-31T00:00:00+00:00</lastmod>
       
@@ -446,7 +450,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/01/25/running-a-process-in-the-background-from-php.html</loc>
+      <loc>http://stuart-james.com/code/2014/01/25/running-a-process-in-the-background-from-php.html</loc>
       
         <lastmod>2014-01-25T00:00:00+00:00</lastmod>
       
@@ -455,7 +459,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2014/01/01/read-(aka-listened)-books-of-2013.html</loc>
+      <loc>http://stuart-james.com/life/2014/01/01/read-(aka-listened)-books-of-2013.html</loc>
       
         <lastmod>2014-01-01T00:00:00+00:00</lastmod>
       
@@ -464,7 +468,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/12/31/gradient-field-hog-update.html</loc>
+      <loc>http://stuart-james.com/code/2013/12/31/gradient-field-hog-update.html</loc>
       
         <lastmod>2013-12-31T00:00:00+00:00</lastmod>
       
@@ -473,7 +477,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/11/22/my-pre-gaming-xbox-one-experience.html</loc>
+      <loc>http://stuart-james.com/life/2013/11/22/my-pre-gaming-xbox-one-experience.html</loc>
       
         <lastmod>2013-11-22T00:00:00+00:00</lastmod>
       
@@ -482,7 +486,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/11/01/virtualbox-windows-8.1-upgrade-don't-forget-the-settings.html</loc>
+      <loc>http://stuart-james.com/tech/2013/11/01/virtualbox-windows-8.1-upgrade-don't-forget-the-settings.html</loc>
       
         <lastmod>2013-11-01T00:00:00+00:00</lastmod>
       
@@ -491,7 +495,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/10/31/safeseh-and-visual-studio.html</loc>
+      <loc>http://stuart-james.com/tech/2013/10/31/safeseh-and-visual-studio.html</loc>
       
         <lastmod>2013-10-31T00:00:00+00:00</lastmod>
       
@@ -500,7 +504,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/10/28/about.me-increasing-popularity.html</loc>
+      <loc>http://stuart-james.com/life/2013/10/28/about.me-increasing-popularity.html</loc>
       
         <lastmod>2013-10-28T00:00:00+00:00</lastmod>
       
@@ -509,7 +513,7 @@
     </url>
   
     <url>
-      <loc>http://stuart-james.com/2013/10/25/surface-(1)-rt-8.1-upgrade-tips.html</loc>
+      <loc>http://stuart-james.com/tech/2013/10/25/surface-(1)-rt-8.1-upgrade-tips.html</loc>
       
         <lastmod>2013-10-25T00:00:00+01:00</lastmod>
       
