@@ -199,7 +199,7 @@
           </h4>
            
 								<div class="image featured wrapper">
-                                     <img src="/images/blog/2016-08-26-style.jpg" alt="" />
+                                     <img src="images/blog/2016-08-26-style.jpg" alt="" />
                                     
                 <a href="/research/2016/08/26/british-library-dataset-style-transfer.html" class="image featured">
 
@@ -221,15 +221,15 @@ Style transfer has become a popular area of research and with public application
 So having read the papers around this previously, I was fairly sure it would not transfer very well, but on the chance that local statistics can enforce something coherent it was worth running (and also gave me a chance to play with such networks). So by taking a few examples, these are the best results from transferring from the BL'13 to the <a href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html">Berkeley Segmentation Dataset (BSDS500) [BSDS500'11]</a>
 </p>
 
-<p><img style="width:100%" src="/images/blog/2016-08-26-style-collage.png" /></p>
+<p><img style="width:100%" src="images/blog/2016-08-26-style-collage.png" /></p>
 
 <p>
     These results were achieved using the Texture Nets method [Ulyanov'16] trained on a singular example and the most visually appealing results displayed after playing with the Texture / Style weights as well as the chosen example. Code available on <a href="https://github.com/DmitryUlyanov/texture_nets">GitHub</a>
 </p>
 <p>
-<img style="max-width:32%; float: left;" src="/images/blog/2016-08-26-style-example.jpg" />
-<img style="max-width:32%; float: left;" src="/images/blog/2016-08-26-style-bsd500.jpg" />
-<img style="max-width:32%; float: left;" src="/images/blog/2016-08-26-style-bsd500-stylaized.jpg" />
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-example.jpg" />
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-bsd500.jpg" />
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-bsd500-stylaized.jpg" />
 </p>
 <p>
  What is quite interesting is if you look at this from a distance they look plausible, but it isn't till you look at one adjacent to another or zoom in you realize that these aren't actually the same style. Logical hatching patterns to describe shadows or depth are ignored, or in the cases where they are present they don't make sense. 

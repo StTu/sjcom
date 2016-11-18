@@ -1,5 +1,5 @@
 
-<!-- Blog Layout Start -->
+<!-- Category Layout Start -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,8 @@
   <meta name="description" content="Research page for Stuart James">
   <meta name="author" content="Stuart James">
   <meta name="keywords" content="stuart, james, personal, research">
-  <link rel="canonical" href="/blog/page2/">
-  <title>{ Stuart James } | Blog</title>
+  <link rel="canonical" href="/categories/research.html">
+  <title>{ Stuart James } | research</title>
 
   <!-- Bootstrap Core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -161,40 +161,104 @@
 <!-- Navigation End -->
 
 
-    <section id="page" class="container content-section text-center">
-
+    <section class="container content-section text-center">
       <div class="row">
         <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
 
-        
-<!-- Swipe Instructions Start -->
-
-<div id="swipe-instruction">
-  <div>
-    <p><br><br><br></p>
-    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
-    <p><strong>
-    
-      Did you know that you can navigate the archive pages by swiping left and right?
-    
-    </strong></p>
-    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
-      
-        Got it!
-      
-    </button>
-  </div>
-</div>
-
-<!-- Swipe Instructions End -->
-
-
-        <h2 id="blog">Blog</h2>
-
-
-        <div>
           
+
+          <h3 id="#research">Category: research</h3>
+
+          <div>
             
+              
+                
+<!-- Post List Start -->
+
+<h4 align="left">
+  <strong>26 Aug 2016</strong>
+  <small>.
+    <a class="category" href="/categories/research.html">
+      research
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/research/2016/08/26/british-library-dataset-style-transfer.html">
+    <strong>Transferring old book image style to real world photos</strong>
+  </a>
+  <small><a href="/research/2016/08/26/british-library-dataset-style-transfer.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h4>
+  <div style="text-align: justify;">
+    
+                        <div class="image featured wrapper">
+                                <img src="images/blog/2016-08-26-style.jpg" alt="" />
+                            
+        <a href="/research/2016/08/26/british-library-dataset-style-transfer.html" class="image featured">
+
+            </a>
+                        
+                            <div class="image featured cite">
+                                    <a href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html">Original Image from BSDS500 Dataset</a>
+                            </div>
+                        
+                        </div>
+    
+    <p>
+Style transfer has become a popular area of research and with public applications such as Prisma based on Neural Style Transfer [Gatys'15]. Earlier this week I wanted to answer the question does it really work for understanding the larger style and context. In contrast to [Wang'13] where they learnt an artistic stroke style, how does it compare. The British Library Flickr 1m+ dataset [BL'13] provides an interesting application of this, where there is an inherent style for transferring. 
+</p>
+<!--more-->
+
+<p>
+So having read the papers around this previously, I was fairly sure it would not transfer very well, but on the chance that local statistics can enforce something coherent it was worth running (and also gave me a chance to play with such networks). So by taking a few examples, these are the best results from transferring from the BL'13 to the <a href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html">Berkeley Segmentation Dataset (BSDS500) [BSDS500'11]</a>
+</p>
+
+<p><img style="width:100%" src="images/blog/2016-08-26-style-collage.png" /></p>
+
+<p>
+    These results were achieved using the Texture Nets method [Ulyanov'16] trained on a singular example and the most visually appealing results displayed after playing with the Texture / Style weights as well as the chosen example. Code available on <a href="https://github.com/DmitryUlyanov/texture_nets">GitHub</a>
+</p>
+<p>
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-example.jpg" />
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-bsd500.jpg" />
+<img style="max-width:32%; float: left;" src="images/blog/2016-08-26-style-bsd500-stylaized.jpg" />
+</p>
+<p>
+ What is quite interesting is if you look at this from a distance they look plausible, but it isn't till you look at one adjacent to another or zoom in you realize that these aren't actually the same style. Logical hatching patterns to describe shadows or depth are ignored, or in the cases where they are present they don't make sense. 
+</p>
+
+<p>
+As a mini-conclusion, style-transfer, although gaining a lot of hype has still a long way to being accurately reproduce general artistic style. Still the results are interesting and if you aren't looking for exact replication, then it is visually appealing. It must be bared in mind that the British Library dataset is challenging, where the style has been evolving for human understanding over millenniums. A problem to keep working on, possibly guided by transfer learning.
+</p>
+
+<h3>References</h3>
+<p>[Gatys'15] Leon A Gatys and Alexander S Ecker and Matthias Bethge. "A Neural Algorithm of Artistic Style". Arxiv (http://arxiv.org/abs/1508.06576). 2015.
+<br />
+[Wang'13] T Wang and J Collomosse and D Greig and A Hunter. "Learnable Stroke Models for Example-based Portrait Painting". Proc. British Machine Vision Conference (BMVC). 2013.
+<br />
+[BL'13] British Library Flickr. https://www.flickr.com/photos/britishlibrary/. 2013.
+<br />
+[BSDS500'11] Berkeley Segmentation Dataset. https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/resources.html#bsds500. 2011
+<br />
+[Ulyanov'16] Dmitry Ulyanov and Vadim Lebedev and Andrea Vedaldi and Victor Lempitsky. "Texture Networks: Feed-forward Synthesis of Textures and Stylized Images. Arxiv (http://arxiv.org/abs/1603.03417). 2016.
+</p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                
 <!-- Post List Start -->
 
 <h4 align="left">
@@ -243,137 +307,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
-          
+              
             
-<!-- Post List Start -->
-
-<h4 align="left">
-  <strong>14 Apr 2016</strong>
-  <small>.
-    <a class="category" href="/categories/tech.html">
-      tech
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/tech/2016/04/14/moving-to-jekyll.html">
-    <strong>Moving to Jekyll</strong>
-  </a>
-  <small><a href="/tech/2016/04/14/moving-to-jekyll.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h4>
-  <div style="text-align: justify;">
-    
-                        <div class="image featured wrapper">
-                                <img src="images/blog/jekyll-logo.png" alt="" />
-                            
-        <a href="/tech/2016/04/14/moving-to-jekyll.html" class="image featured">
-
-            </a>
-                        
-                        </div>
-    
-    <p>After many (and many) years of using dynamic CMS, I have decided to take the plunge and move to an old school methodology -- static websites. Well when I say "static", I mean offline generated site, I'm not crazy after all. I don't want to spend the next years of my life changing tiny global settings on my website, but more I just don't see the need to actually have a heavy database driven site running all the time, when to be honest I don't often update the site.</p>
-<!--more-->
-<p>
-So why did I stop updating, well that answer comes in two parts. Firstly I experienced some problems with the CMS I was using, naughty Mojo Portal! But this just limited my ability to post. The second and main reason is that I lacked time and I'm not saying I have more time now, but I just didn't want to spend the small amount of time I have allocated to my website on repairing the website.
-</p>
-
-<p>
-So the the solution Jeykll! A perl based offline static site generator. I must admit the choice of this wasn't exactly done on an extensive search and making a grounded decision, but instead I used github and it seemed a logical extension. That is not to say I did no search, I glanced, but there didn't seem a big differentiator other than language. So Perl and Jekyll it is, why not learn a language at the same time after all, so even if this all fails I've learned something generalisable. 
-</p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
+              
             
-<!-- Post List Start -->
-
-<h4 align="left">
-  <strong>20 Oct 2014</strong>
-  <small>.
-    <a class="category" href="/categories/tech.html">
-      tech
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/tech/2014/10/20/why-i-am-a-resolution-junky.html">
-    <strong>Why I am a resolution junky</strong>
-  </a>
-  <small><a href="/tech/2014/10/20/why-i-am-a-resolution-junky.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h4>
-  <div style="text-align: justify;">
-    
-                        <div class="image featured wrapper">
-                                <img src="/images/blog/highrescoding.png" alt="" />
-                            
-        <a href="/tech/2014/10/20/why-i-am-a-resolution-junky.html" class="image featured">
-
-            </a>
-                        
-                        </div>
-    
-    <p>I have been coding for many years now (scarily &gt; 15&nbsp;years), I have always aimed to get higher and higher resolution screens or alternatively multiple screens. Sadly as mentioned in an earlier blog post the computer I am using at the moment is a desktop replacement&nbsp;laptop with a dying screen so I purchased a 27" 2560x1440, not quite my laptops 3200x1800 but still pretty reasonable and great for late night coding! The above is an example of me geeking out, library coding and demo/test rig&nbsp;coding in parallel</p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
+              
             
-<!-- Post List Start -->
-
-<h4 align="left">
-  <strong>26 Sep 2014</strong>
-  <small>.
-    <a class="category" href="/categories/tech.html">
-      tech
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html">
-    <strong>New Toys Sept’14 Part 1 of 2 – BenQ BL2710PT 27” WQHD</strong>
-  </a>
-  <small><a href="/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h4>
-  <div style="text-align: justify;">
-    
-                        <div class="image featured wrapper">
-                                <img src="/images/blog/train-rgb2.jpg" alt="" />
-                            
-        <a href="/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html" class="image featured">
-
-            </a>
-                        
-                        </div>
-    
-    <p>After having my beast of a desktop replacement laptop (ASUS n73sv) for a few years now the screen has become a bit temperamental. This and the fact I am using Lenovo Yoga2 Pro ultra book more and more (due to portability/screen res) has resulted in a void in powerful home processing.</p>
-
-<p>Therefore I felt to solve this problem I would get a beefy screen to allow me to work more comfortably at home and in theory write more of my thesis (instead of this blog… shh). I wanted something above the 1920x1080 resolution, since I know that two screens isn’t an option used in conjunction with the old ASUS. Two competitors came to the fore the BenQ BL2710PT and a Dell, oddly the Dell had very bad reversed when used over HDMI and you have to do a lot of hard work to get over the locked down 1080p. So I opted for the BenQ and am very happy with the results.</p>
-
-<!--more-->
-
-<h2>The BenQ BL2710PT 27”</h2>
-
-<p>No one would ever say this is a beautiful monitor, but they would say it is very functional. It does what it needs and has wonderful colour and good true-blacks. Although my graphics card wasn’t over the moon about running at 1440 after a little convincing was happy to run 1440 @ 55Hz (don’t ask why not 60, I couldn’t coax it into getting up to that). I read some reviews of the equivalent Dell that you can only get 30Hz over HDMI with some converters and that it is fine if you increase the mouse rate, that is complete rubbish it feels laggy at 30Hz for a production machine it is simply not good enough.</p>
-
-<p>The one criticism I have is the inbuilt speakers, they are pretty terrible (not that I have had much good experience with in screen-speakers). You have to remember this is marketed as a CAD monitor so you wouldn’t expect this to be a high interest feature. The addition of 2 USB3 ports on this side of the screen is a nice touch very useful extending out your storage options.</p>
-
-<h2>Some kind of conclusion</h2>
-
-<p>It is hard to have a decisive exciting conclusion from a screen, it does what it is supposed to. Would I opt for two monitors over this definitely, if you don’t have that as an option or you want to watch movies in bed then this is a great screen for you to get that extra screen estate. The only real hurdle to this screen is price, at £400 it is steep especially when you think a 1080 screen will set you back £150, a couple of those comes in a lot cheaper for more screen real-estate.</p>
-
-<p>I do know there are some entry level UltraHD( 3840x2160 ) screens often these are locked to 30Hz. Ignoring that issue, I simply didn’t need it my GPU was being pushed to max-resolution poor little GeForce 560m so I opted to save the money and probably get a better UHD screen later when I get something to power it.</p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
+              
             
+              
+                
 <!-- Post List Start -->
 
 <h4 align="left">
@@ -661,34 +604,169 @@ So the the solution Jeykll! A perl based offline static site generator. I must a
   <br class="visible-xs-block">
 
 <!-- Post List End -->
-          
-        </div>
-
-        
-<!-- Pagination Links Start -->
-
-<div class="pagination">
-
-  <h4>
-
-  
-    <a href="/blog/" class="previous">Newer Posts</a>
-  
-
-  
-    |
-  
-
-  
-    <a href="/blog/page3/" class="next">Older Posts</a>
-  
-
-  </h4>
-
-</div>
-
-<!-- Pagination Links End -->
-
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </div>
 
         </div>
       </div>
@@ -782,25 +860,6 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 
   
 
-    <!-- Comments Counter Start -->
-
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'panossakkos'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-    </script>
-
-    <!-- Comments Counter End -->
-
-  
-
 
 
 
@@ -810,7 +869,7 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 <script>
 function addTohistory() {
   if (!window.location.host.startsWith("127.0.0.1")) {
-    history.pushState({}, 'Blog', 'http://stuart-james.com/blog/page2/');
+    history.pushState({}, 'research', 'http://stuart-james.com/categories/research.html');
   }
 }
 </script>
@@ -821,49 +880,6 @@ function addTohistory() {
   
 
   
-
-    <!-- Blog Gesture Navigation Start -->
-
-    <script type="text/javascript" src="/js/hammer.min.js"></script>
-
-    <script>
-      var page = document.getElementById('page');
-
-      new Hammer(page).on('swipeleft', function(event) {
-        addTohistory();
-        
-          document.location.replace("/blog/page3/");
-        
-      });
-      new Hammer(page).on('swiperight', function(event) {
-        addTohistory();
-        
-          document.location.replace("/blog/");
-        
-      });
-    </script>
-
-    <!-- Blog Gesture Navigation Start -->
-
-  
-
-  
-
-    <!-- Swipe Instructions for Blog Start -->
-
-    <script>
-      $(document).ready(function(){
-        if(!localStorage.getItem('blog-swipeshowed')){
-          $("#swipe-instruction").fadeIn();
-          $("#swipe-instruction .close-swipe-instruction").click(function(){
-            $("#swipe-instruction").fadeOut();
-          });
-          localStorage.setItem('blog-swipeshowed', true);
-        }
-      });
-    </script>
-
-    <!-- Swipe Instructions for Blog End -->
 
   
 
@@ -879,4 +895,4 @@ function addTohistory() {
   </body>
 </html>
 
-<!-- Blog Layout End -->
+<!-- Category Layout End -->
