@@ -177,6 +177,186 @@
 <!-- Post List Start -->
 
 <h3 align="left">
+  <strong>11 May 2013</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2013/05/11/s3-push-and-pull-backup-a-ec2-instance-or-just-some-data.html">
+    <strong>S3 Push and Pull – Backup a EC2 Instance or just some data</strong>
+  </a>
+  <small><a href="/2013/05/11/s3-push-and-pull-backup-a-ec2-instance-or-just-some-data.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>I stumbled across a great tool to just push and pull data from an S3 bucket last week wrapped into one light weight executable. Requires .NET 2.0 or Mono so on Linux becomes a little heavy weight.</p>
+<p> </p>
+<p>So start by pulling down the latest version:</p>
+<pre class="csharpcode"><a href="http://s3.codeplex.com/">http://s3.codeplex.com/</a></pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p> </p>
+<p>So to get started you need to configure your bucket, this is stored in the registry so you will need to consider the security implications, but it does allow you to set a password. For simplicity I’ll avoid this and assume that you don't mind it being visible to users/hackers!</p>
+<p>Navigate to where you downloaded and  run the command</p>
+<pre class="csharpcode">s3 auth</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p> </p>
+<p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_19.png"><img style="width: 100%; display: inline;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_19.png" /></a></p>
+<p> </p>
+<p>As you can see you get the option to password protect or not is easy and hopefully there isn’t any problems following this through to configure your bucket ID and Key.</p>
+<p> </p>
+<p>Now you are ready to start shifting some data!</p>
+<pre class="csharpcode">s3 get &lt;bucket [/folder]&gt; &lt;path&gt;</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p>Some good options are</p>
+<pre class="csharpcode">/backup /sync /nogui</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p>Should be fairly clear what these options do.</p>
+<p>If you still are a little stuck try this for a full set of options.</p>
+<pre class="csharpcode">s3 help</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+<p><br /><a href="http://stuartjames.info/Journal/s3-push-and-pull-–-backup-a-ec2-instance-or-just-some-data-2013-05-11.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/s3-push-and-pull-–-backup-a-ec2-instance-or-just-some-data-2013-05-11.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
   <strong>29 Mar 2013</strong>
   <small>.
     <a class="category" href="http://stuart-james.com/categories/.html">
@@ -318,52 +498,6 @@ boost::write_graphviz(dmp,g, boost::make_label_writer(&amp;names[0]));</span></p
 <p>I have done some experiments adding up an installer to the cloud storage is easy to do, and seems to work quite well. If you have a pool of computers seems like a nice offering. I had looked into alternatives such as that provided by LogMeIn, but the price point is a bit of a put off and the integration was somewhat limited.</p>
 <p>I have still to get my Surface or other mobile devices into Intune, but sure will get some nice info out of the 30 day trial that will probably turn into a tool inside the company’s IT I manage(JCS Technology).</p>
 <p><br /><a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>26 Jan 2013</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2013/01/26/performance-i-just-don-t-understand-win-2008-vs-win-2012-on-aws.html">
-    <strong>Performance I just don’t understand Win 2008 vs Win 2012 on AWS</strong>
-  </a>
-  <small><a href="/2013/01/26/performance-i-just-don-t-understand-win-2008-vs-win-2012-on-aws.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>After having some weird connection issues over the last week since migrating my blog and portfolio to an alternative configuration instance based on Windows Server 2008 I decided to do a load test to see whether this was a bigger issue than I expected. The results I just cant explain.</p>
-<p>&nbsp;</p>
-<h4 align="left">Windows Server 2008, IIS Installed only with .NET4</h4>
-<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2008_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2008_Performance" border="0" alt="AWS_Win2008_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2008_performance_thumb.png" width="642" height="297" /></a></p>
-<p align="left">&nbsp;</p>
-<h4 align="left">Windows Server 2012, IIS Installed only with .NET4</h4>
-<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_Performance" border="0" alt="AWS_Win2012_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_performance_thumb.png" width="642" height="297" /></a></p>
-<p align="left">&nbsp;</p>
-<p align="left">As can be seen from the 2008 graph the server fell over very quickly and took a very long time to recover. After looking at this went to the CPU load and found the answer:</p>
-<h4 align="left">Windows Server 2008, IIS Installed only with .NET4</h4>
-<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2008_cpuload.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2008_CPULoad" border="0" alt="AWS_Win2008_CPULoad" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2008_cpuload_thumb.png" width="642" height="276" /></a></p>
-<h4 align="left">Windows Server 2012, IIS Installed only with .NET4</h4>
-<p align="left"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_cpuload.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_CPULoad" border="0" alt="AWS_Win2012_CPULoad" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_cpuload_thumb.png" width="642" height="275" /></a></p>
-<p align="left">&nbsp;</p>
-<p align="left">This wasn’t the profile of the CPU when I first set up the instance, I have no idea what has caused the development of this maxed CPU issue. Will have to look into more, but for the moment am back on 2012! Does demonstrate the importance of setting up alarms though, another nice functionality on the AWS platform.</p>
-<p>&nbsp;</p>
-<p>Edit:</p>
-<h5>Maximum Load Test</h5>
-<p>I have also done a max load test just to see how much the server could take, maxes out about 70 users. Tested against blog, so all img,js and css are additional calls wrapped into one user call. Granted when server hits max capacity is essentially unresponsive.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/aws_win2012_max_performance.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="AWS_Win2012_Max_Performance" border="0" alt="AWS_Win2012_Max_Performance" src="http://stuartjames.info/Data/Sites/5/media/wlw/aws_win2012_max_performance_thumb.png" width="642" height="281" /></a></p>
-<p><br /><a href="http://stuartjames.info/Journal/performance-i-just-don’t-understand-win-2008-vs-win-2012-on-aws.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/performance-i-just-don’t-understand-win-2008-vs-win-2012-on-aws.aspx">…</a></p>
 
   </div>
   <br class="visible-xs-block">

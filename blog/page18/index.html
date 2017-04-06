@@ -177,6 +177,39 @@
 <!-- Post List Start -->
 
 <h3 align="left">
+  <strong>20 Jan 2012</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/01/20/mojoportal-module-headings-not-including-h2-solution.html">
+    <strong>MojoPortal module headings not including h2 solution</strong>
+  </a>
+  <small><a href="/2012/01/20/mojoportal-module-headings-not-including-h2-solution.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>I have been gradually upgrading MojoPortal on my <a href="http://www.stuartjames.info">www.stuartjames.info</a> site for quite a while now, except for a few migrations the database has remained intact. I came across an interesting problem where sometime over the last year of upgrades some of my module titles had h2 elements to them and some didn't. The older of these module titles didn't.</p>
+<p>After trying to figure out a way to solve this then decided enough is enough it must be somewhere in the database so went on a hunt to find it.</p>
+<p>What I found is in mp_Modules under the HeadElement column some items had h2 defined and some were null. Therefore with the Developer Tools Query Tool enabled (in web.config, makes available in admin menu) I performed a quick SQL command to solve my problems.</p>
+<blockquote>
+<p>UPDATE mp_Modules SET HeadElement='h2'</p>
+</blockquote>
+<p>So if your a little lazy like me and after a quick hack to solve those rogue h2 tags, give it a try</p>
+<p><br /><a href="http://stuartjames.info/Journal/mojoportal-module-headings-not-including-h2-solution-2012-01-21.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/mojoportal-module-headings-not-including-h2-solution-2012-01-21.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
   <strong>19 Jan 2012</strong>
   <small>.
     <a class="category" href="http://stuart-james.com/categories/.html">
@@ -321,41 +354,6 @@
 
 <!-- Post List End -->
           
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>03 Dec 2011</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2011/12/03/london-in-december.html">
-    <strong>London in December</strong>
-  </a>
-  <small><a href="/2011/12/03/london-in-december.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.stuart-james.net/thumbnailservice.ashx?albummode=Preview&amp;albumpath=%7e%2fData%2fSites%2f5%2fFolderGalleries%2fLondon+in+December+(3rd+December+2012)%2fDSCF4025.JPG" alt="Oxford Street Star Christmas 2011" width="500" height="375" /></p>
-<p>As I am living in Surrey, London is very easy to get too therefore this weekend I did a trip upto London with my family that were visiting after some food with them I explored some of London to see what Christmas decorations I could find.</p>
-<p style="text-align: center;"><img title="Natural Habitat" src="http://www.stuart-james.net/thumbnailservice.ashx?albummode=Preview&amp;albumpath=%7e%2fData%2fSites%2f5%2fFolderGalleries%2fLondon+in+December+(3rd+December+2012)%2fDSCF3985.JPG" alt="Natural Habitat" width="500" height="375" /></p>
-<p style="text-align: center;">Natural Habitat</p>
-<p style="text-align: center;"><img title="Shameless Advertising" src="http://www.stuart-james.net/thumbnailservice.ashx?albummode=Preview&amp;albumpath=%7e%2fData%2fSites%2f5%2fFolderGalleries%2fLondon+in+December+(3rd+December+2012)%2fDSCF4038.JPG" alt="Shameless Advertising" width="500" height="375" /></p>
-<p style="text-align: center;">Shameless Advertising</p>
-<p style="text-align: center;"><img title="Balls" src="http://www.stuart-james.net/thumbnailservice.ashx?albummode=Preview&amp;albumpath=%7e%2fData%2fSites%2f5%2fFolderGalleries%2fLondon+in+December+(3rd+December+2012)%2fDSCF4050.JPG" alt="Balls" width="500" height="375" /></p>
-<p style="text-align: center;">Balls!</p>
-<p style="text-align: left;">See my Gallery for more images...</p>
-<p><br /><a href="http://stuartjames.info/Journal/london-in-december-2011-12-13.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/london-in-december-2011-12-13.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
         </div>
 
         
@@ -370,7 +368,11 @@
   
 
   
+    |
+  
 
+  
+    <a href="/blog/page19/" class="next">Older Posts</a>
   
 
   </h4>
@@ -478,7 +480,7 @@ function addTohistory() {
       new Hammer(page).on('swipeleft', function(event) {
         addTohistory();
         
-          document.location.replace("/");
+          document.location.replace("/blog/page19/");
         
       });
       new Hammer(page).on('swiperight', function(event) {

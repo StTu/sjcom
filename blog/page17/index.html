@@ -184,6 +184,38 @@
     </a>
   .</small>
   <br class="visible-xs-block">
+  <a href="/2012/03/15/visual-information-retrieval-index-service.html">
+    <strong>Visual Information Retrieval Index Service</strong>
+  </a>
+  <small><a href="/2012/03/15/visual-information-retrieval-index-service.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>Have finally got around to writing a service to handle my index. It may seem strange it has taken so long to do this but, performance often doesn't take much of effect in my work. As long as the search is performed in a reasonable time there are many many ways to speed this up.</p>
+<p>Therefore I have looked into a few different ways to do this, but to utilise as much code as I could I wanted the solution to be witten in C++. I found an incredible library <a href="http://pocoproject.org/">POCO</a>, that was incredibly easy to use. Sadly I am busy working to a deadline at the moment so I don't have enough time to write a full guide to using POCO.</p>
+<p>Hopefully after ICPR deadline and getting settled back into being in the UK will write some tutorials on using POCO as well as index structure.</p>
+<p>To note my further work on this is a KD-Tree to hype up the performance a bit more.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://pocoproject.org/images/overview.png" alt="" width="416" height="330" /></p>
+<p style="text-align: center;"><em>POCO API Structure</em></p>
+<p><br /><a href="http://stuartjames.info/Journal/visual-information-retrieval-index-service-2012-03-16.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/visual-information-retrieval-index-service-2012-03-16.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>15 Mar 2012</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
   <a href="/2012/03/15/retrieval-match-heat-map-using-html5.html">
     <strong>Retrieval Match Heat map, using HTML5</strong>
   </a>
@@ -290,39 +322,6 @@
                         </div>
     
     <p style="text-align: center;">Remember to ALWAYS lock your desktop</p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>20 Jan 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/01/20/mojoportal-module-headings-not-including-h2-solution.html">
-    <strong>MojoPortal module headings not including h2 solution</strong>
-  </a>
-  <small><a href="/2012/01/20/mojoportal-module-headings-not-including-h2-solution.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>I have been gradually upgrading MojoPortal on my <a href="http://www.stuartjames.info">www.stuartjames.info</a> site for quite a while now, except for a few migrations the database has remained intact. I came across an interesting problem where sometime over the last year of upgrades some of my module titles had h2 elements to them and some didn't. The older of these module titles didn't.</p>
-<p>After trying to figure out a way to solve this then decided enough is enough it must be somewhere in the database so went on a hunt to find it.</p>
-<p>What I found is in mp_Modules under the HeadElement column some items had h2 defined and some were null. Therefore with the Developer Tools Query Tool enabled (in web.config, makes available in admin menu) I performed a quick SQL command to solve my problems.</p>
-<blockquote>
-<p>UPDATE mp_Modules SET HeadElement='h2'</p>
-</blockquote>
-<p>So if your a little lazy like me and after a quick hack to solve those rogue h2 tags, give it a try</p>
-<p><br /><a href="http://stuartjames.info/Journal/mojoportal-module-headings-not-including-h2-solution-2012-01-21.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/mojoportal-module-headings-not-including-h2-solution-2012-01-21.aspx">…</a></p>
 
   </div>
   <br class="visible-xs-block">

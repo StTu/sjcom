@@ -177,6 +177,43 @@
 <!-- Post List Start -->
 
 <h3 align="left">
+  <strong>22 May 2013</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2013/05/22/why-@office365-for-smb-is-broken-but-why-have-they-not-fixed-it.html">
+    <strong>Why @Office365 for SMB is broken, but why have they not fixed it?</strong>
+  </a>
+  <small><a href="/2013/05/22/why-@office365-for-smb-is-broken-but-why-have-they-not-fixed-it.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>The company’s IT infrastructure I manage has been using Office 365 for over a year now, but have we? Office 365 gives access to a great Outlook Exchange hosted email, as well as optional Office subscriptions. The subscription costs a lot, but enables easy use of Office that is common in most companies. The flexibility on install makes it much easier in a company that has more computers than people.</p>
+<p><strong>What the package should be is:</strong></p>
+<ul><li>Email through Exchange</li><li>Document collaboration through SharePoint</li><li>Office desktop [Opt]</li></ul>
+<p>As you may have noticed there is a SharePoint step that we miss, now I explain why Office 365 is broken. SharePoint I admit I have never fully understood but I know if used properly can have great integration with other Office product. As always there is a but though and this but I feel to be quite a big issue to a small business.</p>
+<p>As companies develop from a single person to multiple people they go through one computer, to several computers, to several computers accessing shared storage. So most small companies quickly achieve a shared folder or pooled space style approach, to migrate this to Office 365 requires a learning step that is quite hard. The most logical way is to move your files to SharePoint so this could include Quotes, Accounts etc and here comes the but, most people would want to keep a fairly substantial back history to avoid having some files here and some files there creating a nightmare document version and backup scenario.</p>
+<p>In Office 365 SMB you get 10gb of storage + 500mb per user, so 10 users a 15gb. If you are a new company that would be enough for a short time and you would quickly burn through and upgrade(will talk about soon). For an established company 10gb is probably not enough to even move one of there operating folders up so where do you go?</p>
+<p>Sadly there is no answer, on SMB plan there is no way to pay for additional storage… I thought this would be fixed in the recent update but they have still left it as is. Oh and it gets better, there is no way to automatically update to an enterprise plan, and that is ignoring the increased cost. To upgrade you have to download your files and re-upload them (don't ask how file version histories work for that).</p>
+<p>&nbsp;</p>
+<p><strong>So what are you really getting?</strong> a service you can partially use and late software updates… It doesn’t sound like a way to keep people happy with your ecosystem. In fact it makes you wonder if it is worth moving over to LibreOffice and saving a very large amount of money.</p>
+<p>&nbsp;</p>
+<p>As I am saying far to often Microsoft great promise, yet just failing to get it just right.</p>
+<p><br /><a href="http://stuartjames.info/Journal/why-office365-for-smb-is-broken-but-why-have-they-not-fixed-it-2013-05-22.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/why-office365-for-smb-is-broken-but-why-have-they-not-fixed-it-2013-05-22.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
   <strong>12 May 2013</strong>
   <small>.
     <a class="category" href="http://stuart-james.com/categories/.html">
@@ -433,186 +470,6 @@ netsh wlan set hostednetwork mode=allow ssid=&lt;wireless&gt; key=&lt;password&g
 netsh wlan start hostednetwork
 </pre>
 <p><br /><a href="http://stuartjames.info/Journal/windows-8-ad-hoc-where-did-you-go.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/windows-8-ad-hoc-where-did-you-go.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>11 May 2013</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2013/05/11/s3-push-and-pull-backup-a-ec2-instance-or-just-some-data.html">
-    <strong>S3 Push and Pull – Backup a EC2 Instance or just some data</strong>
-  </a>
-  <small><a href="/2013/05/11/s3-push-and-pull-backup-a-ec2-instance-or-just-some-data.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>I stumbled across a great tool to just push and pull data from an S3 bucket last week wrapped into one light weight executable. Requires .NET 2.0 or Mono so on Linux becomes a little heavy weight.</p>
-<p> </p>
-<p>So start by pulling down the latest version:</p>
-<pre class="csharpcode"><a href="http://s3.codeplex.com/">http://s3.codeplex.com/</a></pre>
-<style type="text/css"><!--
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: consolas, "Courier New", courier, monospace;
-	background-color: #ffffff;
-	/*white-space: pre;*/
-}
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
-}
-.csharpcode .lnum { color: #606060; }
---></style>
-
-<p> </p>
-<p>So to get started you need to configure your bucket, this is stored in the registry so you will need to consider the security implications, but it does allow you to set a password. For simplicity I’ll avoid this and assume that you don't mind it being visible to users/hackers!</p>
-<p>Navigate to where you downloaded and  run the command</p>
-<pre class="csharpcode">s3 auth</pre>
-<style type="text/css"><!--
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: consolas, "Courier New", courier, monospace;
-	background-color: #ffffff;
-	/*white-space: pre;*/
-}
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
-}
-.csharpcode .lnum { color: #606060; }
---></style>
-
-<p> </p>
-<p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_19.png"><img style="width: 100%; display: inline;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_19.png" /></a></p>
-<p> </p>
-<p>As you can see you get the option to password protect or not is easy and hopefully there isn’t any problems following this through to configure your bucket ID and Key.</p>
-<p> </p>
-<p>Now you are ready to start shifting some data!</p>
-<pre class="csharpcode">s3 get &lt;bucket [/folder]&gt; &lt;path&gt;</pre>
-<style type="text/css"><!--
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: consolas, "Courier New", courier, monospace;
-	background-color: #ffffff;
-	/*white-space: pre;*/
-}
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
-}
-.csharpcode .lnum { color: #606060; }
---></style>
-
-<p>Some good options are</p>
-<pre class="csharpcode">/backup /sync /nogui</pre>
-<style type="text/css"><!--
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: consolas, "Courier New", courier, monospace;
-	background-color: #ffffff;
-	/*white-space: pre;*/
-}
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
-}
-.csharpcode .lnum { color: #606060; }
---></style>
-
-<p>Should be fairly clear what these options do.</p>
-<p>If you still are a little stuck try this for a full set of options.</p>
-<pre class="csharpcode">s3 help</pre>
-<style type="text/css"><!--
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: consolas, "Courier New", courier, monospace;
-	background-color: #ffffff;
-	/*white-space: pre;*/
-}
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
-}
-.csharpcode .lnum { color: #606060; }
---></style>
-<p><br /><a href="http://stuartjames.info/Journal/s3-push-and-pull-–-backup-a-ec2-instance-or-just-some-data-2013-05-11.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/s3-push-and-pull-–-backup-a-ec2-instance-or-just-some-data-2013-05-11.aspx">…</a></p>
 
   </div>
   <br class="visible-xs-block">

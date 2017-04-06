@@ -7,6 +7,19 @@
 		<atom:link href="http://stuart-james.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Leaving UCL meal with Tim's group</title>
+				
+				
+					<description>After being with Tim Weyrich's group for almost a year and a half yesterday
+we had our final group lunch and a cheeky beer. It has been great working with everyone at UCL,
+not just in the immediate group and in that vain more shenanigans to come.</description>
+				
+				<pubDate>Thu, 06 Apr 2017 00:00:00 +0100</pubDate>
+				<link>http://stuart-james.com/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</link>
+				<guid isPermaLink="true">http://stuart-james.com/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</guid>
+			</item>
+		
+			<item>
 				<title>Transferring old book image style to real world photos</title>
 				
 				
@@ -18,8 +31,8 @@ Style transfer has become a popular area of research and with public application
 </description>
 				
 				<pubDate>Fri, 26 Aug 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.html</guid>
+				<link>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.1.html</link>
+				<guid isPermaLink="true">http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.1.html</guid>
 			</item>
 		
 			<item>
@@ -140,21 +153,6 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 				<pubDate>Fri, 26 Sep 2014 00:00:00 +0100</pubDate>
 				<link>http://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</link>
 				<guid isPermaLink="true">http://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</guid>
-			</item>
-		
-			<item>
-				<title>libSVM linear kernel normalisation</title>
-				
-				
-					<description>&lt;p&gt;I have used a variety of tools for binary, multiclass and even incremental SVM problems, today I found something quite nice in binary case for &lt;a href=&quot;http://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libSVM&lt;/a&gt;, although potentially a source of confusion.&lt;/p&gt;
-&lt;p&gt;It is common in machine learning to apply a sigmoid function to normalise the boundaries of a problem, this can by empirically defining the upper and lower bound or through experimentation. Within &lt;a href=&quot;http://www.csie.ntu.edu.tw/~cjlin/libsvm/&quot;&gt;libSVM&lt;/a&gt; they do this through experimentation, that is great to save you some time. The only thing to remember is it means through the use of random and cross validation with small sets of data, you are likely to get different results on each run.&lt;/p&gt;
-&lt;p&gt;So the function to consider is this:&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Mon, 07 Jul 2014 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/research/2014/07/07/libsvm-linear-kernel-normalisation.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/research/2014/07/07/libsvm-linear-kernel-normalisation.html</guid>
 			</item>
 		
 	</channel>

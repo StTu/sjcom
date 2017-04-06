@@ -184,6 +184,75 @@
     </a>
   .</small>
   <br class="visible-xs-block">
+  <a href="/2012/09/08/opencv-brox-optical-flow-sample-possible-fix.html">
+    <strong>OpenCV: Brox Optical Flow Sample, possible fix</strong>
+  </a>
+  <small><a href="/2012/09/08/opencv-brox-optical-flow-sample-possible-fix.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>I had some fun getting OpenCV with CUDA support and the demo to work that required OpenGL that for some yet unknown reason would not connect in properly. So I thought I would share my experience.</p>
+<p>First of compile OpenCV with CUDA</p>
+<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_5.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_5.png" width="421" height="480" /></a></p>
+<p>&nbsp;</p>
+<p>You can also enable OpenGL, but this didn’t work for me yet it did enable the<font size="3"> <font face="Cordia New">#define HAVE_OPENGL </font></font>compile it up and copy out the brox example and make the following corrections, aka #defeine out the OPENGL window parts.</p>
+<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:b3edb652-18ca-4fc2-ab10-340e15bed12f" class="wlWriterEditableSmartContent"><pre style=" width: 709px; height: 325px;background-color:White;overflow: hidden;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">OpenCV / NVIDIA Computer Vision</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Optical Flow Demo: Frame Interpolation</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">=========================================</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Forward flow</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Backward flow</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">#ifdef HAVE_OPENGL
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Needle Map</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">, WINDOW_OPENGL);
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        setGlDevice();
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #0000FF;">#endif</span><span style="color: #000000;">
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Interpolated frame</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">
+</span><span style="color: #008080;">18</span> <span style="color: #000000;"></span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div></p>
+<p>To note you may need to <font size="3" face="Cordia New">#undef HAVE_OPENGL</font>. For a full easy run source you can get from <a href="http://stuartjames.info/Journal/Journal/SharedFiles/Download.aspx?pageid=69&amp;mid=152&amp;fileid=21">here</a></p>
+<p>&nbsp;</p>
+<p>
+<p align="right"><em>Reference: Body of code taken from </em><a href="http://opencv.org"><em>OpenCV</em></a><em> Sample</em></p>
+<p>&nbsp;</p>
+<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/basketball1.png"><img style="display: inline" title="basketball1" alt="basketball1" src="http://stuartjames.info/Data/Sites/5/media/wlw/basketball1_thumb.png" width="240" height="180" /></a><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/basketball2.png"><img style="display: inline" title="basketball2" alt="basketball2" src="http://stuartjames.info/Data/Sites/5/media/wlw/basketball2_thumb.png" width="240" height="180" /></a></p>
+<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_6.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_6.png" width="240" height="190" /></a><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_7.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_7.png" width="240" height="190" /></a></p>
+<p align="center">Left – Forward Optical flow, Right – Backward Optical flow</p>
+<p align="left">&nbsp;</p>
+<p align="left">Some interesting performance info for computation of Brox Optical Flow it took 0.01s, but the Image Copy to GPU took 6.485s [e.g. GpuMat d_frame0(frame0Gray) ]. This was on a laptop spec of i7 (8 thread), 10gb ram, GeForce GT540M 1GB. I will try on another machine sometime see if can get a faster performance specifically in image copy.</p>
+<p align="left">&nbsp;</p>
+<p><em>Note: </em></p>
+<ul>
+<li><em>There may be a better way to overcome the OpenGL requirement this was just a quick work around</em> 
+<li><em>N</em><em>VIDIA CUDA compiler does not currently support Visual Studio 2012 therefore for CUDA you need to use 2010.</em></li>&lt;/ul&gt;<br /><a href="http://stuartjames.info/Journal/opencv-brox-optical-flow-sample-possible-fix.aspx">Stuart James</a>&nbsp;&nbsp;<a href="http://stuartjames.info/Journal/opencv-brox-optical-flow-sample-possible-fix.aspx">...</a>
+</li></ul></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>08 Sep 2012</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
   <a href="/2012/09/08/bmvc-2012.html">
     <strong>BMVC 2012</strong>
   </a>
@@ -349,43 +418,6 @@ http://www.CodeHighlighter.com/
     <p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/carcassonne.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="Carcassonne" alt="Carcassonne" src="http://stuartjames.info/Data/Sites/5/media/wlw/carcassonne_thumb.png" width="640" height="447" /></a></p>
 <p>Played my first game of Carcassonne tonight, was interesting didn’t really construct into anything nice though that I am disappointed by! Would of been nice to have a good map of castles and paths. May have more luck next time.</p>
 <p><br /><a href="http://stuartjames.info/Journal/game-night-carcassonne-this-is-not-a-good-map.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/game-night-carcassonne-this-is-not-a-good-map.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>13 Aug 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/08/13/pixel-tracking-(dog-tracking).html">
-    <strong>Pixel Tracking! (Dog Tracking)</strong>
-  </a>
-  <small><a href="/2012/08/13/pixel-tracking-(dog-tracking).html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>Ever wonder what your dog gets up to at home? Well I do a lot, this weekend I decided to setup a temporary solution to see what my dog does. Here are some day 1 results, only the masks to protect my dogs(Pixel) and my privacy!</p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/54-20120813120140-02m.jpg"><img style="display: inline" title="54-20120813120140-02m" alt="54-20120813120140-02m" src="http://stuartjames.info/Data/Sites/5/media/wlw/54-20120813120140-02m_thumb.jpg" width="640" height="360" /></a></p>
-<p align="center">Pixel Relaxing on sofa</p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/13-20120813063634-00m.jpg"><img style="display: inline" title="13-20120813063634-00m" alt="13-20120813063634-00m" src="http://stuartjames.info/Data/Sites/5/media/wlw/13-20120813063634-00m_thumb.jpg" width="640" height="360" /></a></p>
-<p align="center">Pixel leaping off the sofa</p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/54-20120813120334-03m.jpg"><img style="display: inline" title="54-20120813120334-03m" alt="54-20120813120334-03m" src="http://stuartjames.info/Data/Sites/5/media/wlw/54-20120813120334-03m_thumb.jpg" width="640" height="360" /></a></p>
-<p align="center">Exploring?</p>
-<p>&nbsp;</p>
-<p>This was achieved writing no code (sad I know) but was more of an exploration to see what Linux tools are around for doing this type of thing. i used the motion project(<a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome">http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome</a>) with some parameter playing, pretty simple out of the box. What I found was the tools are ok, not very out of the box and didn’t really work that great. So this is spawning a project for me.</p>
-<p>With the computer vision knowledge I have I think I should be able to mock up a good tracker with all sorts of bells and whistles, to allow me track my dog moving around during the day learn where he likes to sleep dig into what motions he performs possibly even guess when the mail man comes each day and if there are cats around to annoy him.</p>
-<p>The one useful piece of information I have learnt from looking back through the days activity, is that my dog really is as lazy as originally expected. Spends most of his day asleep on sofa explaining why he has so much energy when I get home. Most motion over the day was him moving into a new position!</p>
-<p><br /><a href="http://stuartjames.info/Journal/pixel-tracking-dog-tracking.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/pixel-tracking-dog-tracking.aspx">…</a></p>
 
   </div>
   <br class="visible-xs-block">

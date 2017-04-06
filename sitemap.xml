@@ -290,9 +290,31 @@
        </url>
     
   
+    
+      <url>
+        <loc>http://stuart-james.com/blog/page19/</loc>
+        
+          
+          
+          
+          <priority>1.0</priority>
+          
+        
+       </url>
+    
+  
   
     <url>
-      <loc>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.html</loc>
+      <loc>http://stuart-james.com/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</loc>
+      
+        <lastmod>2017-04-06T00:00:00+01:00</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+    </url>
+  
+    <url>
+      <loc>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.1.html</loc>
       
         <lastmod>2016-08-26T00:00:00+01:00</lastmod>
       

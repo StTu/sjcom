@@ -177,6 +177,34 @@
 <!-- Post List Start -->
 
 <h3 align="left">
+  <strong>26 May 2012</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/05/26/html5-custom-player-remodelled-(ghinda).html">
+    <strong>HTML5 Custom Player Remodelled (ghinda)</strong>
+  </a>
+  <small><a href="/2012/05/26/html5-custom-player-remodelled-(ghinda).html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/ghinda-html5-player-clean.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="ghinda-html5-player-clean" alt="ghinda-html5-player-clean" src="http://stuartjames.info/Data/Sites/5/media/wlw/ghinda-html5-player-clean_thumb.png" width="578" height="480" /></a></p>
+<p>To make the ghinda player a look a bit nicer, I went through and edited the theme, looks pretty stylish and fits nicely with default bootstrap. For more information see earlier posts!</p>
+<p><br /><a href="http://stuartjames.info/Journal/html5-custom-player-remodelled-ghinda.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/html5-custom-player-remodelled-ghinda.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
   <strong>25 May 2012</strong>
   <small>.
     <a class="category" href="http://stuart-james.com/categories/.html">
@@ -282,70 +310,6 @@
     <p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb.png" width="640" height="307" /></a></p>
 <p>At the moment I am doing some work in relation to pose search. In the process for doing this I created a skeleton search tool. I also improved the video player I mentioned earlier making it a nice sleek grey player. The skeleton tool still has some work to be done on it, to make it a fully interactive search. As stated in previous posts, I have really got into abusing the Bootstrap theme (by Twitter).</p>
 <p><br /><a href="http://stuartjames.info/Journal/upgraded-video-player-with-skeleton-search.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/upgraded-video-player-with-skeleton-search.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>21 Apr 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/04/21/map-a-point-within-a-triangle-from-low-dimensions-to-high.html">
-    <strong>Map a point within a triangle from low dimensions to high</strong>
-  </a>
-  <small><a href="/2012/04/21/map-a-point-within-a-triangle-from-low-dimensions-to-high.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>The work I have been doing recently is to explore a mapping from a low dimensional space(10d) to a high dimensional space(160d). Although is not a particularly common problem is something that requires a little thinking. </p>
-<p>The obvious solution is to measure the distance, from the point to the three, triangle points. This of course is difficult to rationalise to a ratio that sums to 1.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/barycentric-basicmapping.jpg"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="Barycentric-BasicMapping" alt="Barycentric-BasicMapping" src="http://stuartjames.info/Data/Sites/5/media/wlw/barycentric-basicmapping_thumb.jpg" width="240" height="240" /></a></p>
-<p>This problem becomes more obvious when a point lies on one of the points on the triangle. For example, this could result in a distance of [0, 50 50]. This distance means that if you project this using this information even if normalised, the point will not lie on the triangle coordinate in the higher dimensional space.</p>
-<p>To be able to map between two triangles accurately the best solution is to utilise Barycentric coordinates. This turns the 3 points of the triangle into three vertices. Using this information you are then able to solve to find the ratios to accurately map between the two spaces.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/barycentric-mapping.jpg"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="Barycentric-Mapping" alt="Barycentric-Mapping" src="http://stuartjames.info/Data/Sites/5/media/wlw/barycentric-mapping_thumb.jpg" width="240" height="240" /></a></p>
-<p>Therefore to generate a new point in 2D, you have:</p>
-<p><img style="display: block; float: none; margin-left: auto; margin-right: auto" src="http://upload.wikimedia.org/wikipedia/en/math/b/e/4/be4c4d7ebd724d5d29a5c81c1275aaef.png" /></p>
-<p>To get to this point we need to solve the equations for lambda, resulting in <em>n</em> equations for each of the different dimensions.</p>
-<p><img style="display: block; float: none; margin-left: auto; margin-right: auto" src="http://upload.wikimedia.org/wikipedia/en/math/8/6/a/86a453723463219aadced1f1f3abe946.png" /></p>
-<p>This can be solved relatively easily using a linear solver.</p>
-<p>So now using this information it is easy to project the point from one triangle to the other. We have provided a Matlab solution to be able to easily map using two triangles.</p>
-<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:bdb4f38e-3f78-4f8e-b373-deaa63837a01" class="wlWriterEditableSmartContent"><pre style=" width: 626px; height: 176px;background-color:White;overflow: auto;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;">1</span> <span style="color: #000000;">A </span><span style="color: #000000;">=</span><span style="color: #000000;"> [];
-</span><span style="color: #008080;">2</span> <span style="color: #000000;">B </span><span style="color: #000000;">=</span><span style="color: #000000;"> [] ;
-</span><span style="color: #008080;">3</span> <span style="color: #000000;"></span><span style="color: #0000FF;">for</span><span style="color: #000000;"> i</span><span style="color: #000000;">=</span><span style="color: #800080;">1</span><span style="color: #000000;">:size(ntA,</span><span style="color: #800080;">1</span><span style="color: #000000;">)
-</span><span style="color: #008080;">4</span> <span style="color: #000000;">    line </span><span style="color: #000000;">=</span><span style="color: #000000;"> [(ntA(i,</span><span style="color: #800080;">1</span><span style="color: #000000;">) </span><span style="color: #000000;">-</span><span style="color: #000000;"> ntA(i,</span><span style="color: #800080;">3</span><span style="color: #000000;">)) (ntA(i,</span><span style="color: #800080;">2</span><span style="color: #000000;">) </span><span style="color: #000000;">-</span><span style="color: #000000;"> ntA(i,</span><span style="color: #800080;">3</span><span style="color: #000000;">)) ];
-</span><span style="color: #008080;">5</span> <span style="color: #000000;">    B </span><span style="color: #000000;">=</span><span style="color: #000000;"> [ B ; (ntA(i,</span><span style="color: #800080;">3</span><span style="color: #000000;">) </span><span style="color: #000000;">-</span><span style="color: #000000;"> Qn(i)) ] ;
-</span><span style="color: #008080;">6</span> <span style="color: #000000;">    A </span><span style="color: #000000;">=</span><span style="color: #000000;"> [A ; line];
-</span><span style="color: #008080;">7</span> <span style="color: #000000;"></span><span style="color: #0000FF;">end</span><span style="color: #000000;">
-</span><span style="color: #008080;">8</span> <span style="color: #000000;">Lambda </span><span style="color: #000000;">=</span><span style="color: #000000;"> linsolve(A,</span><span style="color: #000000;">-</span><span style="color: #000000;">B);</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div></p>
-<p>Therefore you can map the new point using</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:32907cbb-f1e2-417a-be61-2dd87eca602e" class="wlWriterEditableSmartContent"><pre style=" width: 512px; height: 54px;background-color:White;overflow: auto;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;">1</span> <span style="color: #000000;">Lambda = [Lambda ; ( 1 - Lambda(1) - Lambda(2) )];
-</span><span style="color: #008080;">2</span> <span style="color: #000000;">
-</span><span style="color: #008080;">3</span> <span style="color: #000000;">pB = sum(tB .*  repmat(Lambda',[],size(tB,1)),2);</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>&nbsp;</p>
-<p>You can view a complete version of this code, as well as a test case Files.</p>
-<p>See: <a href="files.aspx">Files</a> –&gt;&nbsp; Barycentric Coordinates</p>
-<p align="right"><em>Equations thanks to the ever wonderful <a href="http://en.wikipedia.org/wiki/Barycentric_coordinate_system_(mathematics)">Wikipedia</a></em></p>
-<p><br /><a href="http://stuartjames.info/Journal/map-a-point-within-a-triangle-from-low-dimensions-to-high.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/map-a-point-within-a-triangle-from-low-dimensions-to-high.aspx">…</a></p>
 
   </div>
   <br class="visible-xs-block">

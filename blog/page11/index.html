@@ -177,6 +177,88 @@
 <!-- Post List Start -->
 
 <h3 align="left">
+  <strong>25 Dec 2012</strong>
+  <small>.
+    <a class="category" href="http://stuart-james.com/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/12/25/alternative-boost-graph-construction-based-on-defining-edges-independently.html">
+    <strong>Alternative Boost Graph Construction based on defining edges independently</strong>
+  </a>
+  <small><a href="/2012/12/25/alternative-boost-graph-construction-based-on-defining-edges-independently.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>So you may of seen previous posts on Boost Graph construction, here I present an easier way of constructing the graph but at a performance cost. This shouldn’t be used if can be avoided, but it may be useful if you want to adapt your edges on the fly.</p>
+<p>So we start with the normal code:</p>
+<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:8ccca690-b01d-40c9-b33a-1d57caf3c457" class="wlWriterEditableSmartContent"><pre style=" width: 952px; height: 633px;background-color:White;overflow: hidden;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">typedef adjacency_list </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> listS, vecS, directedS,
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">    no_property, property </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> edge_weight_t, </span><span style="color: #0000FF;">float</span><span style="color: #000000;"> </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> graph_t;
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">typedef graph_traits </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> graph_t </span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::vertex_descriptor vertex_descriptor;
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">typedef graph_traits </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> graph_t </span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::edge_descriptor edge_descriptor;
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">typedef std::pair</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">int</span><span style="color: #000000;">, </span><span style="color: #0000FF;">int</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> Edge;
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;"></span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> num_nodes </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">5</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">enum</span><span style="color: #000000;"> nodes { A, B, C, D, E };
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;"></span><span style="color: #0000FF;">char</span><span style="color: #000000;"> name[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">ABCDE</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">;
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">Edge edge_array[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> { Edge(A, C), Edge(B, B), Edge(B, D), Edge(B, E),
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">    Edge(C, B), Edge(C, D), Edge(D, E), Edge(E, A), Edge(E, B)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">};
+</span><span style="color: #008080;">13</span> <span style="color: #000000;"></span><span style="color: #0000FF;">float</span><span style="color: #000000;"> weights[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> { </span><span style="color: #800080;">1.5</span><span style="color: #000000;">, </span><span style="color: #800080;">2.10</span><span style="color: #000000;">, </span><span style="color: #800080;">1.4</span><span style="color: #000000;">, </span><span style="color: #800080;">2.2</span><span style="color: #000000;">, </span><span style="color: #800080;">7.6</span><span style="color: #000000;">, </span><span style="color: #800080;">3.222</span><span style="color: #000000;">, </span><span style="color: #800080;">1.125</span><span style="color: #000000;">, </span><span style="color: #800080;">1.324</span><span style="color: #000000;">, </span><span style="color: #800080;">1.983</span><span style="color: #000000;"> };
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #0000FF;">int</span><span style="color: #000000;"> num_arcs </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">sizeof</span><span style="color: #000000;">(edge_array) </span><span style="color: #000000;">/</span><span style="color: #000000;"> </span><span style="color: #0000FF;">sizeof</span><span style="color: #000000;">(Edge);
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">graph_t g(edge_array, edge_array </span><span style="color: #000000;">+</span><span style="color: #000000;"> num_arcs, weights, num_nodes);
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">property_map</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">graph_t, edge_weight_t</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::type weightmap </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">get</span><span style="color: #000000;">(edge_weight, g);
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">vertex_descriptor</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> p(num_vertices(g));
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">float</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> d(num_vertices(g));
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">vertex_descriptor s </span><span style="color: #000000;">=</span><span style="color: #000000;"> vertex(A, g);
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">dijkstra_shortest_paths_no_color_map(g, s, predecessor_map(</span><span style="color: #000000;">&amp;</span><span style="color: #000000;">p[</span><span style="color: #800080;">0</span><span style="color: #000000;">]).distance_map(</span><span style="color: #000000;">&amp;</span><span style="color: #000000;">d[</span><span style="color: #800080;">0</span><span style="color: #000000;">]));
+</span><span style="color: #008080;">25</span> <span style="color: #000000;">
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">float</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> distances;
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">float</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> node_index_ids;
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">
+</span><span style="color: #008080;">29</span> <span style="color: #000000;"></span><span style="color: #0000FF;">int</span><span style="color: #000000;"> target </span><span style="color: #000000;">=</span><span style="color: #000000;"> vertex(D, g);
+</span><span style="color: #008080;">30</span> <span style="color: #000000;"></span><span style="color: #0000FF;">do</span><span style="color: #000000;">{
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">    node_index_ids.push_back(target);
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    distances.push_back(d[target]);
+</span><span style="color: #008080;">33</span> <span style="color: #000000;">    std::cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Target </span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> target </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;"> dist </span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> d[target] </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;"> Source </span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> s </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;">  std::endl;
+</span><span style="color: #008080;">34</span> <span style="color: #000000;">    target </span><span style="color: #000000;">=</span><span style="color: #000000;"> p[target];
+</span><span style="color: #008080;">35</span> <span style="color: #000000;">}</span><span style="color: #0000FF;">while</span><span style="color: #000000;">(target </span><span style="color: #000000;">!=</span><span style="color: #000000;"> s);</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div></p>
+
+<p>So we start with a basic set of nodes, A-&gt;E with some connections between them. This is an example of a directed graph so “flow” can only go one direction.</p>
+<p>The benefit of this is you define the construct of the graph and create the <font face="Courier New">graph_t</font>, object <font face="Courier New">g</font>.</p>
+<p>An alternative way of constructing is to generate the nodes, then add in the weights as in:</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:b8b53645-d467-4170-97d4-ee6c2085d769" class="wlWriterEditableSmartContent"><pre style=" width: 952px; height: 76px;background-color:White;overflow: hidden;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #000000;">graph_t g(num_nodes);
+</span><span style="color: #008080;">2</span> <span style="color: #000000;"></span><span style="color: #0000FF;">for</span><span style="color: #000000;"> (</span><span style="color: #0000FF;">int</span><span style="color: #000000;"> i </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">0</span><span style="color: #000000;"> ; i </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> num_arcs ; </span><span style="color: #000000;">++</span><span style="color: #000000;">i){
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">    boost::add_edge(edge_array[i].first,edge_array[i].second,weights[i],g);
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>This may seem easier but comes at a performance cost. In contrast even on this simple example there is a 0.001s time increase, scale this to a real solution you may suffer badly. As stated make sure your scenario makes sense.</p>
+<p><br /><a href="http://stuartjames.info/Journal/alternative-boost-graph-construction-based-on-defining-edges-independently.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/alternative-boost-graph-construction-based-on-defining-edges-independently.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+          
+            
+<!-- Post List Start -->
+
+<h3 align="left">
   <strong>17 Nov 2012</strong>
   <small>.
     <a class="category" href="http://stuart-james.com/categories/.html">
@@ -393,75 +475,6 @@ http://www.CodeHighlighter.com/
 <p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/dsc_0369.jpg"><img style="display: inline" title="DSC_0369" alt="DSC_0369" src="http://stuartjames.info/Data/Sites/5/media/wlw/dsc_0369_thumb.jpg" width="339" height="480" /></a><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/dsc_0371.jpg"><img style="display: inline" title="DSC_0371" alt="DSC_0371" src="http://stuartjames.info/Data/Sites/5/media/wlw/dsc_0371_thumb.jpg" width="310" height="480" /></a></p>
 <p align="center">American guy on left was absolutely incredible, his competitor on the right.</p>
 <p><br /><a href="http://stuartjames.info/Journal/paralympic-swimming-and-wheelchair-tennis-just-wow.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/paralympic-swimming-and-wheelchair-tennis-just-wow.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>08 Sep 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/09/08/opencv-brox-optical-flow-sample-possible-fix.html">
-    <strong>OpenCV: Brox Optical Flow Sample, possible fix</strong>
-  </a>
-  <small><a href="/2012/09/08/opencv-brox-optical-flow-sample-possible-fix.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>I had some fun getting OpenCV with CUDA support and the demo to work that required OpenGL that for some yet unknown reason would not connect in properly. So I thought I would share my experience.</p>
-<p>First of compile OpenCV with CUDA</p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_5.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_5.png" width="421" height="480" /></a></p>
-<p>&nbsp;</p>
-<p>You can also enable OpenGL, but this didn’t work for me yet it did enable the<font size="3"> <font face="Cordia New">#define HAVE_OPENGL </font></font>compile it up and copy out the brox example and make the following corrections, aka #defeine out the OPENGL window parts.</p>
-<p> <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:b3edb652-18ca-4fc2-ab10-340e15bed12f" class="wlWriterEditableSmartContent"><pre style=" width: 709px; height: 325px;background-color:White;overflow: hidden;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;"> 1</span> <span style="color: #000000;">
-</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">OpenCV / NVIDIA Computer Vision</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
-</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Optical Flow Demo: Frame Interpolation</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
-</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        cout </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">=========================================</span><span style="color: #800000;">&quot;</span><span style="color: #000000;"> </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> endl;
-</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">
-</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Forward flow</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
-</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Backward flow</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
-</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
-</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">#ifdef HAVE_OPENGL
-</span><span style="color: #008080;">10</span> <span style="color: #000000;">
-</span><span style="color: #008080;">11</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Needle Map</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">, WINDOW_OPENGL);
-</span><span style="color: #008080;">12</span> <span style="color: #000000;">        setGlDevice();
-</span><span style="color: #008080;">13</span> <span style="color: #000000;">
-</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #0000FF;">#endif</span><span style="color: #000000;">
-</span><span style="color: #008080;">15</span> <span style="color: #000000;">
-</span><span style="color: #008080;">16</span> <span style="color: #000000;">        namedWindow(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Interpolated frame</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
-</span><span style="color: #008080;">17</span> <span style="color: #000000;">
-</span><span style="color: #008080;">18</span> <span style="color: #000000;"></span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div></p>
-<p>To note you may need to <font size="3" face="Cordia New">#undef HAVE_OPENGL</font>. For a full easy run source you can get from <a href="http://stuartjames.info/Journal/Journal/SharedFiles/Download.aspx?pageid=69&amp;mid=152&amp;fileid=21">here</a></p>
-<p>&nbsp;</p>
-<p>
-<p align="right"><em>Reference: Body of code taken from </em><a href="http://opencv.org"><em>OpenCV</em></a><em> Sample</em></p>
-<p>&nbsp;</p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/basketball1.png"><img style="display: inline" title="basketball1" alt="basketball1" src="http://stuartjames.info/Data/Sites/5/media/wlw/basketball1_thumb.png" width="240" height="180" /></a><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/basketball2.png"><img style="display: inline" title="basketball2" alt="basketball2" src="http://stuartjames.info/Data/Sites/5/media/wlw/basketball2_thumb.png" width="240" height="180" /></a></p>
-<p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_6.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_6.png" width="240" height="190" /></a><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_7.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_7.png" width="240" height="190" /></a></p>
-<p align="center">Left – Forward Optical flow, Right – Backward Optical flow</p>
-<p align="left">&nbsp;</p>
-<p align="left">Some interesting performance info for computation of Brox Optical Flow it took 0.01s, but the Image Copy to GPU took 6.485s [e.g. GpuMat d_frame0(frame0Gray) ]. This was on a laptop spec of i7 (8 thread), 10gb ram, GeForce GT540M 1GB. I will try on another machine sometime see if can get a faster performance specifically in image copy.</p>
-<p align="left">&nbsp;</p>
-<p><em>Note: </em></p>
-<ul>
-<li><em>There may be a better way to overcome the OpenGL requirement this was just a quick work around</em> 
-<li><em>N</em><em>VIDIA CUDA compiler does not currently support Visual Studio 2012 therefore for CUDA you need to use 2010.</em></li>&lt;/ul&gt;<br /><a href="http://stuartjames.info/Journal/opencv-brox-optical-flow-sample-possible-fix.aspx">Stuart James</a>&nbsp;&nbsp;<a href="http://stuartjames.info/Journal/opencv-brox-optical-flow-sample-possible-fix.aspx">...</a>
-</li></ul></p>
 
   </div>
   <br class="visible-xs-block">
