@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research page for Stuart James">
   <meta name="author" content="Stuart James">
-  <meta name="keywords" content="stuart, james, personal, research">
+  <meta name="keywords" content="stuart, james, personal, research, computer vision, machine learning, computer graphics, digital heritage,digital humanities, iit, ucl, surrey">
   <link rel="canonical" href="/blog/page13/">
   <title>{ Stuart James } | Blog</title>
 
@@ -24,17 +24,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- Custom CSS -->
-  <link href="http://stuart-james.com/css/grayscale.css" rel="stylesheet">
+  <link href="/css/grayscale.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/timeline.css" rel="stylesheet">
+  <link href="/css/timeline.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/bootstrap-social.css" rel="stylesheet">
-  <link href="http://stuart-james.com/css/animate.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-social.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
   <!-- Custom Fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://stuart-james.com/css/rrssb.css" />
+  <link rel="stylesheet" href="/css/rrssb.css" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -42,7 +42,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   
-    <link rel="shortcut icon" type="image/x-icon" href="http://stuart-james.com/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
   
 
   
@@ -102,7 +102,7 @@
       
           <div>
             
-              <img src="img/black-lab-glass.ico" alt="">
+              <img src="/img/black-lab-glass.ico" alt="">
             
             { Stuart James }
           </div>
@@ -173,13 +173,119 @@
 
         <div>
           
-            
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>18 Aug 2012</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/08/18/boost-dijkstra-shortest-path-example-utilising-backtracking-from-target.html">
+    <strong>Boost Dijkstra Shortest Path Example utilising backtracking from target</strong>
+  </a>
+  <small><a href="/2012/08/18/boost-dijkstra-shortest-path-example-utilising-backtracking-from-target.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>Often API documentation can be difficult to follow and your memory might fail for algorithms you learnt in school, so a simple example often explains how to use a function. Well unless you are very familiar with the way Boost Graph library works then you may find the Dijkstra shortest path documentation confusing.</p>
+<p>So this is what you get from boost…</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:9b519333-47b4-4710-9e39-112e7a46e03b" class="wlWriterEditableSmartContent"><pre style=" width: 750px; height: 426px;background-color:White;overflow: auto;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #000000;">typedef adjacency_list </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> listS, vecS, directedS,
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">  no_property, property </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> edge_weight_t, </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> graph_t;
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">typedef graph_traits </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> graph_t </span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::vertex_descriptor vertex_descriptor;
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">typedef graph_traits </span><span style="color: #000000;">&lt;</span><span style="color: #000000;"> graph_t </span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::edge_descriptor edge_descriptor;
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">typedef std::pair</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">int</span><span style="color: #000000;">, </span><span style="color: #0000FF;">int</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> Edge;
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;"></span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> num_nodes </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800080;">5</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">enum</span><span style="color: #000000;"> nodes { A, B, C, D, E };
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;"></span><span style="color: #0000FF;">char</span><span style="color: #000000;"> name[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">ABCDE</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">;
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">Edge edge_array[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> { Edge(A, C), Edge(B, B), Edge(B, D), Edge(B, E),
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">  Edge(C, B), Edge(C, D), Edge(D, E), Edge(E, A), Edge(E, B)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">};
+</span><span style="color: #008080;">13</span> <span style="color: #000000;"></span><span style="color: #0000FF;">int</span><span style="color: #000000;"> weights[] </span><span style="color: #000000;">=</span><span style="color: #000000;"> { </span><span style="color: #800080;">1</span><span style="color: #000000;">, </span><span style="color: #800080;">2</span><span style="color: #000000;">, </span><span style="color: #800080;">1</span><span style="color: #000000;">, </span><span style="color: #800080;">2</span><span style="color: #000000;">, </span><span style="color: #800080;">7</span><span style="color: #000000;">, </span><span style="color: #800080;">3</span><span style="color: #000000;">, </span><span style="color: #800080;">1</span><span style="color: #000000;">, </span><span style="color: #800080;">1</span><span style="color: #000000;">, </span><span style="color: #800080;">1</span><span style="color: #000000;"> };
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"></span><span style="color: #0000FF;">int</span><span style="color: #000000;"> num_arcs </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">sizeof</span><span style="color: #000000;">(edge_array) </span><span style="color: #000000;">/</span><span style="color: #000000;"> </span><span style="color: #0000FF;">sizeof</span><span style="color: #000000;">(Edge);
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">graph_t g(edge_array, edge_array </span><span style="color: #000000;">+</span><span style="color: #000000;"> num_arcs, weights, num_nodes);
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">property_map</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">graph_t, edge_weight_t</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">::type weightmap </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000FF;">get</span><span style="color: #000000;">(edge_weight, g);
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #000000;">vertex_descriptor</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> p(num_vertices(g));
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">int</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> d(num_vertices(g));
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">vertex_descriptor s </span><span style="color: #000000;">=</span><span style="color: #000000;"> vertex(A, g);
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">dijkstra_shortest_paths(g, s, predecessor_map(</span><span style="color: #000000;">&amp;</span><span style="color: #000000;">p[</span><span style="color: #800080;">0</span><span style="color: #000000;">]).distance_map(</span><span style="color: #000000;">&amp;</span><span style="color: #000000;">d[</span><span style="color: #800080;">0</span><span style="color: #000000;">]));</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p align="right"><em>Taken from <a href="http://www.boost.org/doc/libs/1_49_0/libs/graph/example/dijkstra-example.cpp">http://www.boost.org/doc/libs/1_49_0/libs/graph/example/dijkstra-example.cpp</a></em></p>
+<p>From this example you are able to get the predecessor map and the distances travelled from a root node to all other nodes. But this doesn’t answer the question of how you get the shortest path from point A to point B. The way to do this is called backtracking and is very easy but not necessarily obvious when you don't know the data structures. </p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:7a26d093-f40e-41d5-96b5-13939418994e" class="wlWriterEditableSmartContent"><pre style=" width: 750px; height: 169px;background-color:White;overflow: auto;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #008000;">//</span><span style="color: #008000;"> Backtrack from end node, storing distances</span><span style="color: #008000;">
+</span><span style="color: #008080;">2</span> <span style="color: #008000;"></span><span style="color: #0000FF;">int</span><span style="color: #000000;"> target </span><span style="color: #000000;">=</span><span style="color: #000000;"> vertex(B, g);
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">int</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> nodes;
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">std::vector</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">float</span><span style="color: #000000;">&gt;</span><span style="color: #000000;"> distance;
+</span><span style="color: #008080;">5</span> <span style="color: #000000;"></span><span style="color: #0000FF;">do</span><span style="color: #000000;">{
+</span><span style="color: #008080;">6</span> <span style="color: #000000;">    nodes.push_back(target);
+</span><span style="color: #008080;">7</span> <span style="color: #000000;">    distances.push_back(d[target]);
+</span><span style="color: #008080;">8</span> <span style="color: #000000;">    target </span><span style="color: #000000;">=</span><span style="color: #000000;"> p[target];
+</span><span style="color: #008080;">9</span> <span style="color: #000000;">}</span><span style="color: #0000FF;">while</span><span style="color: #000000;">(target </span><span style="color: #000000;">!=</span><span style="color: #000000;"> s);</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>The vector nodes then contains a list of nodes passed through, that can be reversed easily using std lib functions to find the route from A to B.</p>
+<p><br /><a href="http://stuartjames.info/Journal/boost-dijkstra-shortest-path-example-utilising-backtracking-from-target.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/boost-dijkstra-shortest-path-example-utilising-backtracking-from-target.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>16 Aug 2012</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/08/16/game-night-carcassonne-this-is-not-a-good-map.html">
+    <strong>Game Night: Carcassonne, this is not a good map!</strong>
+  </a>
+  <small><a href="/2012/08/16/game-night-carcassonne-this-is-not-a-good-map.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p align="center"><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/carcassonne.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="Carcassonne" alt="Carcassonne" src="http://stuartjames.info/Data/Sites/5/media/wlw/carcassonne_thumb.png" width="640" height="447" /></a></p>
+<p>Played my first game of Carcassonne tonight, was interesting didn’t really construct into anything nice though that I am disappointed by! Would of been nice to have a good map of castles and paths. May have more luck next time.</p>
+<p><br /><a href="http://stuartjames.info/Journal/game-night-carcassonne-this-is-not-a-good-map.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/game-night-carcassonne-this-is-not-a-good-map.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>13 Aug 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -209,14 +315,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>13 Aug 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -237,14 +345,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>05 Aug 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -292,185 +402,7 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>02 Aug 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/08/02/boost-serialization-fast-and-easy-serialization-of-objects-for-c++-to-xml-text-or-binary.html">
-    <strong>Boost Serialization fast and easy Serialization of objects for C++ to XML,Text or Binary</strong>
-  </a>
-  <small><a href="/2012/08/02/boost-serialization-fast-and-easy-serialization-of-objects-for-c++-to-xml-text-or-binary.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>While coding I always try to learn new ways of writing old things. There are many many libraries out there for C++ all work in different ways, but the library I fell in love with is Boost. Ignoring the massive extension to the STL basic classes it bundles up matrix, graph, system functionality. But what beats all of that mainly because I write it to often is the ever allusive save and load functionality you have to write for all classes. Serialization is one of the things I really miss from my old C# writing days. So here goes a few examples of how to make serialization work!</p>
-<p>In C++ there is no reflector so sadly we have to tell the compiler what to save. So an example class</p>
-<p>&nbsp;</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:99a7a63d-182a-466e-8522-7af8665618a9" class="wlWriterEditableSmartContent"><pre style=" width: 395px; height: 184px;background-color:White;overflow: visible;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;">1</span> <span style="color: #0000FF;">class</span><span style="color: #000000;"> NodeDescriptor{
-</span><span style="color: #008080;">2</span> <span style="color: #000000;"></span><span style="color: #0000FF;">public</span><span style="color: #000000;">:
-</span><span style="color: #008080;">3</span> <span style="color: #000000;">    NodeDescriptor() {} ;
-</span><span style="color: #008080;">4</span> <span style="color: #000000;">    NodeDescriptor(</span><span style="color: #0000FF;">int</span><span style="color: #000000;"> offset):
-</span><span style="color: #008080;">5</span> <span style="color: #000000;">        Offset(offset){} ;
-</span><span style="color: #008080;">6</span> <span style="color: #000000;">    </span><span style="color: #000000;">~</span><span style="color: #000000;">NodeDescriptor() {} ;
-</span><span style="color: #008080;">7</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> Offset;
-</span><span style="color: #008080;">8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">private</span><span style="color: #000000;">:
-</span><span style="color: #008080;">9</span> <span style="color: #000000;">};</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>Very very basic, one public variable this is an internal of another object so is reasonable to allow a public property style access. So what we want to do is to do is allow Boost access to save out the variables.</p>
-<p>&nbsp;</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:60c870df-d3f2-41ff-8077-5ec22220ee0f" class="wlWriterEditableSmartContent"><pre style=" width: 742px; height: 308px;background-color:White;overflow: visible;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">class</span><span style="color: #000000;"> NodeDescriptor{
-</span><span style="color: #008080;"> 2</span> <span style="color: #000000;"></span><span style="color: #0000FF;">public</span><span style="color: #000000;">:
-</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    NodeDescriptor() {} ;
-</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">    NodeDescriptor(</span><span style="color: #0000FF;">int</span><span style="color: #000000;"> offset):
-</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">        Offset(offset){} ;
-</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">    </span><span style="color: #000000;">~</span><span style="color: #000000;">NodeDescriptor() {} ;
-</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> Offset;
-</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">private</span><span style="color: #000000;">:
-</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Serialization Settings</span><span style="color: #008000;">
-</span><span style="color: #008080;">10</span> <span style="color: #008000;"></span><span style="color: #000000;">    friend </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> boost::serialization::access;
-</span><span style="color: #008080;">11</span> <span style="color: #000000;">    friend std::ostream </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> </span><span style="color: #0000FF;">operator</span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;">(std::ostream </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">os, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> MotionGraphDesc </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">mgd);
-</span><span style="color: #008080;">12</span> <span style="color: #000000;">    template</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">class</span><span style="color: #000000;"> Archive</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
-</span><span style="color: #008080;">13</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> serialize(Archive </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> ar, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> unsigned </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> </span><span style="color: #008000;">/*</span><span style="color: #008000;"> file_version </span><span style="color: #008000;">*/</span><span style="color: #000000;">)
-</span><span style="color: #008080;">14</span> <span style="color: #000000;">    {
-</span><span style="color: #008080;">15</span> <span style="color: #000000;">            ar </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> BOOST_SERIALIZATION_NVP(Offset);
-</span><span style="color: #008080;">16</span> <span style="color: #000000;">    }
-</span><span style="color: #008080;">17</span> <span style="color: #000000;">};</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>So what we have added is allowing boost access via a friend operator. Then adding a class for serialize the data, unfortunately you have to define the data of which there is many ways todo, above is an example of the xml way, what this does is create a xml tag called Offset where it stores the value of Offset. Alternatively say we had a private member _offset, it wouldn’t be visually nice to read the xml so we can customise the name of the tag.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:3744339b-1034-443c-82d5-04bbace4a8ef" class="wlWriterEditableSmartContent"><pre style=" width: 742px; height: 83px;background-color:White;overflow: auto;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;">1</span> <span style="color: #0000FF;">void</span><span style="color: #000000;"> serialize(Archive </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> ar, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> unsigned </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> </span><span style="color: #008000;">/*</span><span style="color: #008000;"> file_version </span><span style="color: #008000;">*/</span><span style="color: #000000;">)
-</span><span style="color: #008080;">2</span> <span style="color: #000000;">{
-</span><span style="color: #008080;">3</span> <span style="color: #000000;">    ar    </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">  boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Offset</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,_offset);
-</span><span style="color: #008080;">4</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>This is actually what the BOOST_SERIALIZATION_NVP macro roles out into but BOOST_SERIALIZATION_NVP is slightly more convenient in a large amount of cases. So now the question is how do we save? Well if you add in a couple of methods to your class description for Load, Save you get something like this, to note I have defined an enum that will come in to play with the read write functions.</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:9dd766a6-4d6e-4177-8344-a7a8e08c8023" class="wlWriterEditableSmartContent"><pre style=" width: 843px; height: 271px;background-color:White;overflow: auto;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Load(</span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">char</span><span style="color: #000000;">*</span><span style="color: #000000;"> path,SerializeAsType t){
-</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">    std::ifstream f(path);
-</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (f.is_open()){
-</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        Read(f,t);
-</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">    }</span><span style="color: #0000FF;">else</span><span style="color: #000000;">
-</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
-</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">}
-</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
-</span><span style="color: #008080;"> 9</span> <span style="color: #000000;"></span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Save(</span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">char</span><span style="color: #000000;">*</span><span style="color: #000000;"> path,SerializeAsType t){
-</span><span style="color: #008080;">10</span> <span style="color: #000000;">    std::ofstream f(path);
-</span><span style="color: #008080;">11</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (f.is_open()){
-</span><span style="color: #008080;">12</span> <span style="color: #000000;">        Write(f,t);
-</span><span style="color: #008080;">13</span> <span style="color: #000000;">    }</span><span style="color: #0000FF;">else</span><span style="color: #000000;">
-</span><span style="color: #008080;">14</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
-</span><span style="color: #008080;">15</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>Now we define the read write:</p>
-<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:0190187e-eda3-4ee6-b31c-4f0482a1ab85" class="wlWriterEditableSmartContent"><pre style=" width: 843px; height: 846px;background-color:White;overflow: visible;"><div><!--
-
-Code highlighting produced by Actipro CodeHighlighter (freeware)
-http://www.CodeHighlighter.com/
-
---><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Read(std::istream</span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> str,SerializeAsType t){
-</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">switch</span><span style="color: #000000;">(t){
-</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> XmlArc:
-</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            boost::archive::xml_iarchive ia(str);
-</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">NodeDescriptor</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,(</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">));
-</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> TextArc:
-</span><span style="color: #008080;">10</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;">11</span> <span style="color: #000000;">            boost::archive::text_iarchive ia(str);
-</span><span style="color: #008080;">12</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">;
-</span><span style="color: #008080;">13</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">14</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;">15</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> BinaryArc:
-</span><span style="color: #008080;">16</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;">17</span> <span style="color: #000000;">            boost::archive::binary_iarchive ia(str);
-</span><span style="color: #008080;">18</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">;
-</span><span style="color: #008080;">19</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">20</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;">21</span> <span style="color: #000000;">    }
-</span><span style="color: #008080;">22</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;
-</span><span style="color: #008080;">23</span> <span style="color: #000000;">}
-</span><span style="color: #008080;">24</span> <span style="color: #000000;">
-</span><span style="color: #008080;">25</span> <span style="color: #000000;"></span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Write(std::ostream</span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> str,SerializeAsType t){
-</span><span style="color: #008080;">26</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">switch</span><span style="color: #000000;">(t){
-</span><span style="color: #008080;">27</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> XmlArc:
-</span><span style="color: #008080;">28</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;">29</span> <span style="color: #000000;">            boost::archive::xml_oarchive oa(str);
-</span><span style="color: #008080;">30</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">NodeDescriptor</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,(</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">));
-</span><span style="color: #008080;">31</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">32</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;">33</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> TextArc:
-</span><span style="color: #008080;">34</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;">35</span> <span style="color: #000000;">            boost::archive::text_oarchive oa(str);
-</span><span style="color: #008080;">36</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> (</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">);
-</span><span style="color: #008080;">37</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">38</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;">39</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> BinaryArc:
-</span><span style="color: #008080;">40</span> <span style="color: #000000;">        {
-</span><span style="color: #008080;">41</span> <span style="color: #000000;">            boost::archive::binary_oarchive oa(str);
-</span><span style="color: #008080;">42</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> (</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">);
-</span><span style="color: #008080;">43</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">44</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
-</span><span style="color: #008080;">45</span> <span style="color: #000000;">    }
-</span><span style="color: #008080;">46</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;
-</span><span style="color: #008080;">47</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
-<p>How easy is that? Most of the space is taken up by making it more compatible allowing the save and load of XML, Text and Binary archives. One thing to note thought is that this is for the purpose of serialization not really a property config file. The other thing to consider is this is a lazy coder solution, it isn’t fast so don't create massive xml files or they will take a long time to read in and out!</p>
-<p><br /><a href="http://stuartjames.info/Journal/boost-serialization-fast-and-easy-serialization-of-objects-for-c-to-xmltext-or-binary.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/boost-serialization-fast-and-easy-serialization-of-objects-for-c-to-xmltext-or-binary.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>11 Jul 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/07/11/olympics-2012-tickets-have-arrived-in-two-batches-(dont-ask-why).html">
-    <strong>Olympics 2012 tickets have arrived in two batches (dont ask why)</strong>
-  </a>
-  <small><a href="/2012/07/11/olympics-2012-tickets-have-arrived-in-two-batches-(dont-ask-why).html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/olympic-tickets-2012.jpg"><img style="display: inline" title="olympic-tickets-2012" alt="olympic-tickets-2012" src="http://stuartjames.info/Data/Sites/5/media/wlw/olympic-tickets-2012_thumb.jpg" width="640" height="429" /></a></p>
-<p><br /><a href="http://stuartjames.info/Journal/olympics-2012-tickets-have-arrived-in-two-batches-dont-ask-why.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/olympics-2012-tickets-have-arrived-in-two-batches-dont-ask-why.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
+            </div>
           
         </div>
 
@@ -576,7 +508,7 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 <script>
 function addTohistory() {
   if (!window.location.host.startsWith("127.0.0.1")) {
-    history.pushState({}, 'Blog', 'http://stuart-james.com/blog/page13/');
+    history.pushState({}, 'Blog', '/blog/page13/');
   }
 }
 </script>

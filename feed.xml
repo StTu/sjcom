@@ -3,8 +3,38 @@
 	<channel>
 		<title>{ Stuart James }</title>
 		<description>Research page for Stuart James</description>
-		<link>http://stuart-james.com</link>
-		<atom:link href="http://stuart-james.com/feed.xml" rel="self" type="application/rss+xml" />
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>A lesson in stopping</title>
+				
+				
+					<description>&lt;p&gt;For a long time now I have pushed my self to run further, faster and harder; this year has been the pinnacle of that with some of my heaviest running months and one of my lowest. Resulting in running over 1000miles in a year, an enormous unplanned achievement. But being plagued by persistent injuries of many varieties, I pushed on and didn’t listen to the needs of my body. Hoping and praying, that it wasn’t serious. Amazingly I have survived through, but as the year comes to a close, I’m doing a conservative Advent Running period and slowing down to enjoy time with my dog, Pixel.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 30 Nov 2017 00:00:00 +0100</pubDate>
+				<link>/running/2017/11/30/A-lesson-in-stopping.html</link>
+				<guid isPermaLink="true">/running/2017/11/30/A-lesson-in-stopping.html</guid>
+			</item>
+		
+			<item>
+				<title>Texture Stationarization&amp;#58; Turning Photos into Tileable Textures</title>
+				
+				
+					<description>&lt;p&gt;I’m very proud to announce our recent paper at Eurographics 2017 in Lyon today the spotlight
+was showcased, with narration by Joep Moritz. If you didn’t get the chance to see it, an extended
+version is now available on YouTube.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/hnFSH2DAsNQ&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+</description>
+				
+				<pubDate>Tue, 25 Apr 2017 00:00:00 +0200</pubDate>
+				<link>/research/2017/04/25/Eurographics-Tileable-Textures.html</link>
+				<guid isPermaLink="true">/research/2017/04/25/Eurographics-Tileable-Textures.html</guid>
+			</item>
 		
 			<item>
 				<title>Leaving UCL meal with Tim's group</title>
@@ -14,9 +44,9 @@
 we had our final group lunch and a cheeky beer. It has been great working with everyone at UCL,
 not just in the immediate group and in that vain more shenanigans to come.</description>
 				
-				<pubDate>Thu, 06 Apr 2017 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</guid>
+				<pubDate>Thu, 06 Apr 2017 00:00:00 +0200</pubDate>
+				<link>/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</link>
+				<guid isPermaLink="true">/research/2017/04/06/leaving-ucl-meal-with-tims-group.html</guid>
 			</item>
 		
 			<item>
@@ -30,9 +60,9 @@ Style transfer has become a popular area of research and with public application
 
 </description>
 				
-				<pubDate>Fri, 26 Aug 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.1.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/research/2016/08/26/british-library-dataset-style-transfer.1.html</guid>
+				<pubDate>Fri, 26 Aug 2016 00:00:00 +0200</pubDate>
+				<link>/research/2016/08/26/british-library-dataset-style-transfer.1.html</link>
+				<guid isPermaLink="true">/research/2016/08/26/british-library-dataset-style-transfer.1.html</guid>
 			</item>
 		
 			<item>
@@ -46,9 +76,9 @@ As I continue my crazy running activities I take another shot at the Relish Run 
 
 </description>
 				
-				<pubDate>Sun, 21 Aug 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/running/2016/08/21/cheddar-gorge-relish-run.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/running/2016/08/21/cheddar-gorge-relish-run.html</guid>
+				<pubDate>Sun, 21 Aug 2016 00:00:00 +0200</pubDate>
+				<link>/running/2016/08/21/cheddar-gorge-relish-run.html</link>
+				<guid isPermaLink="true">/running/2016/08/21/cheddar-gorge-relish-run.html</guid>
 			</item>
 		
 			<item>
@@ -62,9 +92,9 @@ I've been running for a few years now, doing as many runs as I can a year. Grant
 
 </description>
 				
-				<pubDate>Sun, 31 Jul 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/running/2016/07/31/San-Francisco-Second-Half.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/running/2016/07/31/San-Francisco-Second-Half.html</guid>
+				<pubDate>Sun, 31 Jul 2016 00:00:00 +0200</pubDate>
+				<link>/running/2016/07/31/San-Francisco-Second-Half.html</link>
+				<guid isPermaLink="true">/running/2016/07/31/San-Francisco-Second-Half.html</guid>
 			</item>
 		
 			<item>
@@ -78,9 +108,9 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 
 </description>
 				
-				<pubDate>Thu, 23 Jun 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/life/2016/06/23/getting-back-to-books.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/life/2016/06/23/getting-back-to-books.html</guid>
+				<pubDate>Thu, 23 Jun 2016 00:00:00 +0200</pubDate>
+				<link>/life/2016/06/23/getting-back-to-books.html</link>
+				<guid isPermaLink="true">/life/2016/06/23/getting-back-to-books.html</guid>
 			</item>
 		
 			<item>
@@ -91,9 +121,9 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 
 </description>
 				
-				<pubDate>Tue, 14 Jun 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/life/2016/06/14/twenty-nine-going-on-thirty.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/life/2016/06/14/twenty-nine-going-on-thirty.html</guid>
+				<pubDate>Tue, 14 Jun 2016 00:00:00 +0200</pubDate>
+				<link>/life/2016/06/14/twenty-nine-going-on-thirty.html</link>
+				<guid isPermaLink="true">/life/2016/06/14/twenty-nine-going-on-thirty.html</guid>
 			</item>
 		
 			<item>
@@ -108,9 +138,9 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 
 </description>
 				
-				<pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/research/2016/04/20/working-with-british-library-dataset.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/research/2016/04/20/working-with-british-library-dataset.html</guid>
+				<pubDate>Wed, 20 Apr 2016 00:00:00 +0200</pubDate>
+				<link>/research/2016/04/20/working-with-british-library-dataset.html</link>
+				<guid isPermaLink="true">/research/2016/04/20/working-with-british-library-dataset.html</guid>
 			</item>
 		
 			<item>
@@ -122,37 +152,9 @@ When I was younger I never got into reading novels sadly. I have tried throughou
 
 </description>
 				
-				<pubDate>Thu, 14 Apr 2016 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/tech/2016/04/14/moving-to-jekyll.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/tech/2016/04/14/moving-to-jekyll.html</guid>
-			</item>
-		
-			<item>
-				<title>Why I am a resolution junky</title>
-				
-				
-					<description>&lt;p&gt;I have been coding for many years now (scarily &amp;gt; 15&amp;nbsp;years), I have always aimed to get higher and higher resolution screens or alternatively multiple screens. Sadly as mentioned in an earlier blog post the computer I am using at the moment is a desktop replacement&amp;nbsp;laptop with a dying screen so I purchased a 27&quot; 2560x1440, not quite my laptops 3200x1800 but still pretty reasonable and great for late night coding! The above is an example of me geeking out, library coding and demo/test rig&amp;nbsp;coding in parallel&lt;/p&gt;</description>
-				
-				<pubDate>Mon, 20 Oct 2014 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/tech/2014/10/20/why-i-am-a-resolution-junky.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/tech/2014/10/20/why-i-am-a-resolution-junky.html</guid>
-			</item>
-		
-			<item>
-				<title>New Toys Sept’14 Part 1 of 2 – BenQ BL2710PT 27” WQHD</title>
-				
-				
-					<description>&lt;p&gt;After having my beast of a desktop replacement laptop (ASUS n73sv) for a few years now the screen has become a bit temperamental. This and the fact I am using Lenovo Yoga2 Pro ultra book more and more (due to portability/screen res) has resulted in a void in powerful home processing.&lt;/p&gt;
-
-&lt;p&gt;Therefore I felt to solve this problem I would get a beefy screen to allow me to work more comfortably at home and in theory write more of my thesis (instead of this blog… shh). I wanted something above the 1920x1080 resolution, since I know that two screens isn’t an option used in conjunction with the old ASUS. Two competitors came to the fore the BenQ BL2710PT and a Dell, oddly the Dell had very bad reversed when used over HDMI and you have to do a lot of hard work to get over the locked down 1080p. So I opted for the BenQ and am very happy with the results.&lt;/p&gt;
-
-
-
-</description>
-				
-				<pubDate>Fri, 26 Sep 2014 00:00:00 +0100</pubDate>
-				<link>http://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</link>
-				<guid isPermaLink="true">http://stuart-james.com/tech/2014/09/26/new-toys-sept-14-part-1-of-2-benq-bl2710pt-27-wqhd.html</guid>
+				<pubDate>Thu, 14 Apr 2016 00:00:00 +0200</pubDate>
+				<link>/tech/2016/04/14/moving-to-jekyll.html</link>
+				<guid isPermaLink="true">/tech/2016/04/14/moving-to-jekyll.html</guid>
 			</item>
 		
 	</channel>

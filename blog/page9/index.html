@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research page for Stuart James">
   <meta name="author" content="Stuart James">
-  <meta name="keywords" content="stuart, james, personal, research">
+  <meta name="keywords" content="stuart, james, personal, research, computer vision, machine learning, computer graphics, digital heritage,digital humanities, iit, ucl, surrey">
   <link rel="canonical" href="/blog/page9/">
   <title>{ Stuart James } | Blog</title>
 
@@ -24,17 +24,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- Custom CSS -->
-  <link href="http://stuart-james.com/css/grayscale.css" rel="stylesheet">
+  <link href="/css/grayscale.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/timeline.css" rel="stylesheet">
+  <link href="/css/timeline.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/bootstrap-social.css" rel="stylesheet">
-  <link href="http://stuart-james.com/css/animate.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-social.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
   <!-- Custom Fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://stuart-james.com/css/rrssb.css" />
+  <link rel="stylesheet" href="/css/rrssb.css" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -42,7 +42,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   
-    <link rel="shortcut icon" type="image/x-icon" href="http://stuart-james.com/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
   
 
   
@@ -102,7 +102,7 @@
       
           <div>
             
-              <img src="img/black-lab-glass.ico" alt="">
+              <img src="/img/black-lab-glass.ico" alt="">
             
             { Stuart James }
           </div>
@@ -173,13 +173,163 @@
 
         <div>
           
-            
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>12 May 2013</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2013/05/12/c++-+-visual-studio-2012-(vs2012)-+-win8-converting-projects-up-some-conflicts-i-found.html">
+    <strong>C++ + Visual Studio 2012 (VS2012) + Win8 , converting projects up some conflicts I found</strong>
+  </a>
+  <small><a href="/2013/05/12/c++-+-visual-studio-2012-(vs2012)-+-win8-converting-projects-up-some-conflicts-i-found.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>Having loved the ability to compile VS2010 projects inside the VS2012 shell as a way of delaying the update, I thought it was time to stop delaying ( 1 Year late ).</p>
+<pre class="code"><span style="background: white; color: black;">std::cout &lt;&lt; </span><span style="background: white; color: rgb(163, 21, 21);">"Minimum value for int: " </span><span style="background: white; color: black;">&lt;&lt; std::</span><span style="background: white; color: rgb(43, 145, 175);">numeric_limits</span><span style="background: white; color: black;">&lt;</span><span style="background: white; color: blue;">int</span><span style="background: white; color: black;">&gt;::min() &lt;&lt; std::endl</span><span style="background: white; color: black;">;
+std::cout &lt;&lt; </span><span style="background: white; color: rgb(163, 21, 21);">"Maximum value for int: " </span><span style="background: white; color: black;">&lt;&lt; std::</span><span style="background: white; color: rgb(43, 145, 175);">numeric_limits</span><span style="background: white; color: black;">&lt;</span><span style="background: white; color: blue;">int</span><span style="background: white; color: black;">&gt;::max() &lt;&lt; </span>std::endl<span style="background: white; color: black;">;</span></pre>
+<p>Generates error:</p>
+<pre class="code"><span style="background: white; color: black;">error C2059: syntax error : </span><span style="background: white; color: rgb(163, 21, 21);">'::' </span><span style="background: white; color: black;">[path]\source.cpp</span></pre>
+<p>There is a good chance if you have these lines and are including the windows header you will hit an error. The Windows team put in a solution to the <font face="Courier New">#define min</font> conflict in <font face="Courier New">&lt;minwindef.h&gt;</font>.</p>
+<p>So instead of</p>
+<pre class="code"><span style="background: white; color: blue;">#include </span><span style="background: white; color: rgb(163, 21, 21);">&lt;windows.h&gt;</span></pre>
+<p>You use a #define to avoid this</p>
+<pre class="code"><span style="background: white; color: blue;">#define </span><span style="background: white; color: rgb(111, 0, 138);">NOMINMAX
+</span><span style="background: white; color: blue;">#include </span><span style="background: white; color: rgb(163, 21, 21);">&lt;windows.h&gt;</span></pre>
+<p>Another issue I found was with an annoying char define, again from the Windows team in <font face="Courier New">&lt;rpcndr.h&gt;</font>.</p>
+<pre class="code"><span style="background: white; color: blue;">#define </span><span style="background: white; color: rgb(111, 0, 138);">small </span><span style="background: white; color: blue;">char</span></pre>
+<p>This one doesn’t have the ability to comment out for so if you have a small function with something like:</p>
+<pre class="code"><span style="background: white; color: rgb(43, 145, 175);">AnObj </span><span style="background: white; color: rgb(111, 0, 138);">small </span><span style="background: white; color: black;">= large.resize(val);</span></pre>
+<p>Generates error:</p>
+<pre class="code"><span style="background: white; color: black;">error C2628:</span><span style="background: white; color: rgb(163, 21, 21);">'AnObj' </span><span style="background: white; color: black;">followed by </span><span style="background: white; color: rgb(163, 21, 21);">'char' </span><span style="background: white; color: black;">is illegal (did you forget a </span><span style="background: white; color: rgb(163, 21, 21);">';'</span><span style="background: white; color: black;">?) [path]\source.cpp</span></pre>
+<p>You will have to suffer and change the name, in some ways it teaches you (me) for not being very specific, still annoying though. Hopefully this is all the conversion errors I’ll hit.</p>
+<p><br /><a href="http://stuartjames.info/Journal/c--visual-studio-2012-vs2012--win8--converting-projects-up-some-conflicts-i-found.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/c--visual-studio-2012-vs2012--win8--converting-projects-up-some-conflicts-i-found.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>11 May 2013</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2013/05/11/windows-8-ad-hoc-where-did-you-go.html">
+    <strong>Windows 8, Ad-Hoc where did you go?</strong>
+  </a>
+  <small><a href="/2013/05/11/windows-8-ad-hoc-where-did-you-go.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_17.png"><img style="width: 100%; display: inline;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/blogimages/head_windows_8_ad-hoc_where_did_you_go.png" height="100" width="600" /></a></p>
+<p>For some reason that I haven’t been able to find in Windows 8 Ad-Hoc networks have been removed. Well not actually removed but the UI is removed, confused? Well there is a simple couple of commands you can use to launch an Ad-Hoc network. It may not be as nice but it is better than  Win7, is not labelled as Ad-Hoc and you can connect Android devices to it!</p>
+<p>You will need a Command Prompt with <strong>Administrative Permissions</strong></p>
+<p> </p>
+<pre class="csharpcode">netsh wlan set hostednetwork mode=allow ssid=&lt;wifi name&gt; key=&lt;password&gt;</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p>Now enable it:</p>
+<pre class="csharpcode">netsh wlan start hostednetwork</pre>
+<style type="text/css"><!--
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+--></style>
+
+<p> </p>
+<p>Simple hey? Oh remember you may actually want an internet connection go to Network Connections and edit the properties of your network connection with Internet and change the Internet Connection sharing option to the Network newly created, looks like this the * gives it away.</p>
+<p><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_18.png"><img style="display: inline;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_18.png" height="378" width="300" /></a></p>
+<p> </p>
+<p>Lazy and want to automatically do this create a bat file with your custom details, create a new Task in the Task Scheduler and remember to up the permissions or will fail!</p>
+
+<p>
+<h5>Edit:</h5>
+You may find that the connection turns off therefore a more robust script is to disable first.
+</p>
+<pre class="csharpcode">netsh wlan stop hostednetwork
+netsh wlan set hostednetwork mode=allow ssid=&lt;wireless&gt; key=&lt;password&gt;
+netsh wlan start hostednetwork
+</pre>
+<p><br /><a href="http://stuartjames.info/Journal/windows-8-ad-hoc-where-did-you-go.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/windows-8-ad-hoc-where-did-you-go.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>11 May 2013</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -352,14 +502,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>29 Mar 2013</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -385,14 +537,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>29 Mar 2013</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -430,79 +584,7 @@ boost::write_graphviz(dmp,g, boost::make_label_writer(&amp;names[0]));</span></p
   <br class="visible-xs-block">
 
 <!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>17 Mar 2013</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2013/03/17/mojoportal-inline-editing-easy-user-content-editing.html">
-    <strong>mojoPortal Inline Editing, easy user content editing!</strong>
-  </a>
-  <small><a href="/2013/03/17/mojoportal-inline-editing-easy-user-content-editing.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>I have always liked the style of mojoPortal making it easy to understand what you are editing. The approach is quite in contrast to other CMS where you end up with a front house and back house style system, mojoPortal does a nice job of merging this.</p>
-<p>With version 2.3.9.6 it gets even better with inline editing, so for example take my home home page.</p>
-<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_13.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_13.png" width="640" height="456" /></a></p>
-<p>&nbsp;</p>
-<p>If you have completed the update and if you have CKEditor as your content editor you will notice little locks appearing on your page when in content editor view</p>
-<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_14.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_14.png" width="640" height="279" /></a></p>
-<p>If you click the lock, it will unlock(<a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_15.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_15.png" width="19" height="18" /></a>), you can then click on the content for editing and your page will look like this:</p>
-<p align="center"><a href="http://stuartjames.info/Data/Sites/5/media/wlw/image_16.png"><img style="display: inline" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_16.png" width="640" height="462" /></a></p>
-<p>&nbsp;</p>
-<p>Now if this isn’t easy for users to understand what is? Well done mojoPortal for integration of another useful feature.</p>
-<p><br /><a href="http://stuartjames.info/Journal/mojoportal-inline-editing-easy-user-content-editing.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/mojoportal-inline-editing-easy-user-content-editing.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>27 Jan 2013</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2013/01/27/windows-intune-a-must-for-smb-administrators.html">
-    <strong>Windows Intune a must for SMB administrators</strong>
-  </a>
-  <small><a href="/2013/01/27/windows-intune-a-must-for-smb-administrators.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>With the push of large amount of cloud services from many different vendors it takes time to explore and see what is now available. Today I did a brief excursion into Windows Intune.</p>
-<p>Intune provides system administrators to monitor computers within their organisation. Allowing you to install software from a common pool force policies and keep an eye on computers that may be coming to the end of their life or just short on storage.</p>
-<p>I am just getting started but thought would share some screenshots.</p>
-<h5>Admin Panel</h5>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_10.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_10.png" height="380" width="642" /></a></p>
-<h5>Some computer hardware info:</h5>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_11.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_11.png" height="482" width="547" /></a></p>
-<h5>User web view (I do love the tiles layout to be clean and elegant):</h5>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_12.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" alt="image" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_thumb_12.png" height="376" width="642" /></a></p>
-<p>I have done some experiments adding up an installer to the cloud storage is easy to do, and seems to work quite well. If you have a pool of computers seems like a nice offering. I had looked into alternatives such as that provided by LogMeIn, but the price point is a bit of a put off and the integration was somewhat limited.</p>
-<p>I have still to get my Surface or other mobile devices into Intune, but sure will get some nice info out of the 30 day trial that will probably turn into a tool inside the company’s IT I manage(JCS Technology).</p>
-<p><br /><a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/windows-intune-a-must-for-smb-administrators.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
+            </div>
           
         </div>
 
@@ -608,7 +690,7 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 <script>
 function addTohistory() {
   if (!window.location.host.startsWith("127.0.0.1")) {
-    history.pushState({}, 'Blog', 'http://stuart-james.com/blog/page9/');
+    history.pushState({}, 'Blog', '/blog/page9/');
   }
 }
 </script>

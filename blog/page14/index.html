@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research page for Stuart James">
   <meta name="author" content="Stuart James">
-  <meta name="keywords" content="stuart, james, personal, research">
+  <meta name="keywords" content="stuart, james, personal, research, computer vision, machine learning, computer graphics, digital heritage,digital humanities, iit, ucl, surrey">
   <link rel="canonical" href="/blog/page14/">
   <title>{ Stuart James } | Blog</title>
 
@@ -24,17 +24,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- Custom CSS -->
-  <link href="http://stuart-james.com/css/grayscale.css" rel="stylesheet">
+  <link href="/css/grayscale.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/timeline.css" rel="stylesheet">
+  <link href="/css/timeline.css" rel="stylesheet">
   
-  <link href="http://stuart-james.com/css/bootstrap-social.css" rel="stylesheet">
-  <link href="http://stuart-james.com/css/animate.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-social.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
   <!-- Custom Fonts -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://stuart-james.com/css/rrssb.css" />
+  <link rel="stylesheet" href="/css/rrssb.css" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -42,7 +42,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   
-    <link rel="shortcut icon" type="image/x-icon" href="http://stuart-james.com/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
   
 
   
@@ -102,7 +102,7 @@
       
           <div>
             
-              <img src="img/black-lab-glass.ico" alt="">
+              <img src="/img/black-lab-glass.ico" alt="">
             
             { Stuart James }
           </div>
@@ -173,13 +173,197 @@
 
         <div>
           
-            
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>02 Aug 2012</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/08/02/boost-serialization-fast-and-easy-serialization-of-objects-for-c++-to-xml-text-or-binary.html">
+    <strong>Boost Serialization fast and easy Serialization of objects for C++ to XML,Text or Binary</strong>
+  </a>
+  <small><a href="/2012/08/02/boost-serialization-fast-and-easy-serialization-of-objects-for-c++-to-xml-text-or-binary.html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p>While coding I always try to learn new ways of writing old things. There are many many libraries out there for C++ all work in different ways, but the library I fell in love with is Boost. Ignoring the massive extension to the STL basic classes it bundles up matrix, graph, system functionality. But what beats all of that mainly because I write it to often is the ever allusive save and load functionality you have to write for all classes. Serialization is one of the things I really miss from my old C# writing days. So here goes a few examples of how to make serialization work!</p>
+<p>In C++ there is no reflector so sadly we have to tell the compiler what to save. So an example class</p>
+<p>&nbsp;</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:99a7a63d-182a-466e-8522-7af8665618a9" class="wlWriterEditableSmartContent"><pre style=" width: 395px; height: 184px;background-color:White;overflow: visible;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #0000FF;">class</span><span style="color: #000000;"> NodeDescriptor{
+</span><span style="color: #008080;">2</span> <span style="color: #000000;"></span><span style="color: #0000FF;">public</span><span style="color: #000000;">:
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">    NodeDescriptor() {} ;
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">    NodeDescriptor(</span><span style="color: #0000FF;">int</span><span style="color: #000000;"> offset):
+</span><span style="color: #008080;">5</span> <span style="color: #000000;">        Offset(offset){} ;
+</span><span style="color: #008080;">6</span> <span style="color: #000000;">    </span><span style="color: #000000;">~</span><span style="color: #000000;">NodeDescriptor() {} ;
+</span><span style="color: #008080;">7</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> Offset;
+</span><span style="color: #008080;">8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">private</span><span style="color: #000000;">:
+</span><span style="color: #008080;">9</span> <span style="color: #000000;">};</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>Very very basic, one public variable this is an internal of another object so is reasonable to allow a public property style access. So what we want to do is to do is allow Boost access to save out the variables.</p>
+<p>&nbsp;</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:60c870df-d3f2-41ff-8077-5ec22220ee0f" class="wlWriterEditableSmartContent"><pre style=" width: 742px; height: 308px;background-color:White;overflow: visible;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">class</span><span style="color: #000000;"> NodeDescriptor{
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;"></span><span style="color: #0000FF;">public</span><span style="color: #000000;">:
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    NodeDescriptor() {} ;
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">    NodeDescriptor(</span><span style="color: #0000FF;">int</span><span style="color: #000000;"> offset):
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">        Offset(offset){} ;
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">    </span><span style="color: #000000;">~</span><span style="color: #000000;">NodeDescriptor() {} ;
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> Offset;
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;"></span><span style="color: #0000FF;">private</span><span style="color: #000000;">:
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Serialization Settings</span><span style="color: #008000;">
+</span><span style="color: #008080;">10</span> <span style="color: #008000;"></span><span style="color: #000000;">    friend </span><span style="color: #0000FF;">class</span><span style="color: #000000;"> boost::serialization::access;
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">    friend std::ostream </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> </span><span style="color: #0000FF;">operator</span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;">(std::ostream </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">os, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> MotionGraphDesc </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">mgd);
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">    template</span><span style="color: #000000;">&lt;</span><span style="color: #0000FF;">class</span><span style="color: #000000;"> Archive</span><span style="color: #000000;">&gt;</span><span style="color: #000000;">
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">void</span><span style="color: #000000;"> serialize(Archive </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> ar, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> unsigned </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> </span><span style="color: #008000;">/*</span><span style="color: #008000;"> file_version </span><span style="color: #008000;">*/</span><span style="color: #000000;">)
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">            ar </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> BOOST_SERIALIZATION_NVP(Offset);
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">};</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>So what we have added is allowing boost access via a friend operator. Then adding a class for serialize the data, unfortunately you have to define the data of which there is many ways todo, above is an example of the xml way, what this does is create a xml tag called Offset where it stores the value of Offset. Alternatively say we had a private member _offset, it wouldn’t be visually nice to read the xml so we can customise the name of the tag.</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:3744339b-1034-443c-82d5-04bbace4a8ef" class="wlWriterEditableSmartContent"><pre style=" width: 742px; height: 83px;background-color:White;overflow: auto;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;">1</span> <span style="color: #0000FF;">void</span><span style="color: #000000;"> serialize(Archive </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> ar, </span><span style="color: #0000FF;">const</span><span style="color: #000000;"> unsigned </span><span style="color: #0000FF;">int</span><span style="color: #000000;"> </span><span style="color: #008000;">/*</span><span style="color: #008000;"> file_version </span><span style="color: #008000;">*/</span><span style="color: #000000;">)
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">    ar    </span><span style="color: #000000;">&amp;</span><span style="color: #000000;">  boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">Offset</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,_offset);
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>This is actually what the BOOST_SERIALIZATION_NVP macro roles out into but BOOST_SERIALIZATION_NVP is slightly more convenient in a large amount of cases. So now the question is how do we save? Well if you add in a couple of methods to your class description for Load, Save you get something like this, to note I have defined an enum that will come in to play with the read write functions.</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:9dd766a6-4d6e-4177-8344-a7a8e08c8023" class="wlWriterEditableSmartContent"><pre style=" width: 843px; height: 271px;background-color:White;overflow: auto;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Load(</span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">char</span><span style="color: #000000;">*</span><span style="color: #000000;"> path,SerializeAsType t){
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">    std::ifstream f(path);
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (f.is_open()){
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        Read(f,t);
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">    }</span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">}
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;"></span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Save(</span><span style="color: #0000FF;">const</span><span style="color: #000000;"> </span><span style="color: #0000FF;">char</span><span style="color: #000000;">*</span><span style="color: #000000;"> path,SerializeAsType t){
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">    std::ofstream f(path);
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">if</span><span style="color: #000000;"> (f.is_open()){
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        Write(f,t);
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">    }</span><span style="color: #0000FF;">else</span><span style="color: #000000;">
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">false</span><span style="color: #000000;">;
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>Now we define the read write:</p>
+<div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:9D7513F9-C04C-4721-824A-2B34F0212519:0190187e-eda3-4ee6-b31c-4f0482a1ab85" class="wlWriterEditableSmartContent"><pre style=" width: 843px; height: 846px;background-color:White;overflow: visible;"><div><!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--><span style="color: #008080;"> 1</span> <span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Read(std::istream</span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> str,SerializeAsType t){
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">switch</span><span style="color: #000000;">(t){
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> XmlArc:
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;">            boost::archive::xml_iarchive ia(str);
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">NodeDescriptor</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,(</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">));
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> TextArc:
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">            boost::archive::text_iarchive ia(str);
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">;
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> BinaryArc:
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">17</span> <span style="color: #000000;">            boost::archive::binary_iarchive ia(str);
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">            ia </span><span style="color: #000000;">&gt;&gt;</span><span style="color: #000000;"> </span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">;
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">22</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;">23</span> <span style="color: #000000;">}
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">
+</span><span style="color: #008080;">25</span> <span style="color: #000000;"></span><span style="color: #0000FF;">bool</span><span style="color: #000000;"> NodeDescriptor::Write(std::ostream</span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> str,SerializeAsType t){
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">switch</span><span style="color: #000000;">(t){
+</span><span style="color: #008080;">27</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> XmlArc:
+</span><span style="color: #008080;">28</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">            boost::archive::xml_oarchive oa(str);
+</span><span style="color: #008080;">30</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> boost::serialization::make_nvp(</span><span style="color: #800000;">&quot;</span><span style="color: #800000;">NodeDescriptor</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">,(</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">));
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">33</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> TextArc:
+</span><span style="color: #008080;">34</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">35</span> <span style="color: #000000;">            boost::archive::text_oarchive oa(str);
+</span><span style="color: #008080;">36</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> (</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">);
+</span><span style="color: #008080;">37</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">38</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">39</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">case</span><span style="color: #000000;"> BinaryArc:
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">41</span> <span style="color: #000000;">            boost::archive::binary_oarchive oa(str);
+</span><span style="color: #008080;">42</span> <span style="color: #000000;">            oa </span><span style="color: #000000;">&lt;&lt;</span><span style="color: #000000;"> (</span><span style="color: #000000;">*</span><span style="color: #0000FF;">this</span><span style="color: #000000;">);
+</span><span style="color: #008080;">43</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">44</span> <span style="color: #000000;">        </span><span style="color: #0000FF;">break</span><span style="color: #000000;">;
+</span><span style="color: #008080;">45</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">46</span> <span style="color: #000000;">    </span><span style="color: #0000FF;">return</span><span style="color: #000000;"> </span><span style="color: #0000FF;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;">47</span> <span style="color: #000000;">}</span></div></pre><!-- Code inserted with Steve Dunn's Windows Live Writer Code Formatter Plugin.  http://dunnhq.com --></div>
+<p>How easy is that? Most of the space is taken up by making it more compatible allowing the save and load of XML, Text and Binary archives. One thing to note thought is that this is for the purpose of serialization not really a property config file. The other thing to consider is this is a lazy coder solution, it isn’t fast so don't create massive xml files or they will take a long time to read in and out!</p>
+<p><br /><a href="http://stuartjames.info/Journal/boost-serialization-fast-and-easy-serialization-of-objects-for-c-to-xmltext-or-binary.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/boost-serialization-fast-and-easy-serialization-of-objects-for-c-to-xmltext-or-binary.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
+<!-- Post List Start -->
+
+<h3 align="left">
+  <strong>11 Jul 2012</strong>
+  <small>.
+    <a class="category" href="/categories/.html">
+      
+    </a>
+  .</small>
+  <br class="visible-xs-block">
+  <a href="/2012/07/11/olympics-2012-tickets-have-arrived-in-two-batches-(dont-ask-why).html">
+    <strong>Olympics 2012 tickets have arrived in two batches (dont ask why)</strong>
+  </a>
+  <small><a href="/2012/07/11/olympics-2012-tickets-have-arrived-in-two-batches-(dont-ask-why).html#disqus_thread">Comments</a></small>
+  <br class="visible-xs-block">
+  </h3>
+  <div style="text-align: justify;">
+    
+    <p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/olympic-tickets-2012.jpg"><img style="display: inline" title="olympic-tickets-2012" alt="olympic-tickets-2012" src="http://stuartjames.info/Data/Sites/5/media/wlw/olympic-tickets-2012_thumb.jpg" width="640" height="429" /></a></p>
+<p><br /><a href="http://stuartjames.info/Journal/olympics-2012-tickets-have-arrived-in-two-batches-dont-ask-why.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/olympics-2012-tickets-have-arrived-in-two-batches-dont-ask-why.aspx">…</a></p>
+
+  </div>
+  <br class="visible-xs-block">
+
+<!-- Post List End -->
+            </div>
+          
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>23 Jun 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -203,14 +387,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>19 Jun 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -230,14 +416,16 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
+            </div>
           
-            
+            <div class="blogpost">
+              
 <!-- Post List Start -->
 
 <h3 align="left">
   <strong>18 Jun 2012</strong>
   <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
+    <a class="category" href="/categories/.html">
       
     </a>
   .</small>
@@ -257,69 +445,7 @@
   <br class="visible-xs-block">
 
 <!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>01 Jun 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/06/01/easy-tool-for-evaluation-of-images-datasets-where-recall-isn-t-an-option.html">
-    <strong>Easy tool for evaluation of images datasets, where recall isn’t an option</strong>
-  </a>
-  <small><a href="/2012/06/01/easy-tool-for-evaluation-of-images-datasets-where-recall-isn-t-an-option.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <p>Often when doing image dataset evaluation you want a quick easy way to either see how different descriptors perform or just get an evaluation measure for your system. Well I have created a tool to be able to do the former. This is a simple tool so you can select images, if that image appears in another descriptors results it is auto-magically highlighted to avoid bias or mistake. As you scroll the query image stays with you and finally you can upload a relevance result for each descriptor to the server.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/image_descriptor_evaluation_tool.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="image_descriptor_evaluation_tool" alt="image_descriptor_evaluation_tool" src="http://stuartjames.info/Data/Sites/5/media/wlw/image_descriptor_evaluation_tool_thumb.png" width="640" height="368" /></a> &lt;p&gt; &lt;/p&gt; &lt;p&gt;Of course to use this requires you being able to ping against my server so isn’t for public use, but is quite fun to play around with javascript and see how easy although painful it can be to create GUI’s for distributed use.&lt;/p&gt;<br /><a href="http://stuartjames.info/Journal/easy-tool-for-evaluation-of-images-datasets-where-recall-isn’t-an-option.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/easy-tool-for-evaluation-of-images-datasets-where-recall-isn’t-an-option.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
-          
-            
-<!-- Post List Start -->
-
-<h3 align="left">
-  <strong>26 May 2012</strong>
-  <small>.
-    <a class="category" href="http://stuart-james.com/categories/.html">
-      
-    </a>
-  .</small>
-  <br class="visible-xs-block">
-  <a href="/2012/05/26/ide-experiments.html">
-    <strong>IDE Experiments</strong>
-  </a>
-  <small><a href="/2012/05/26/ide-experiments.html#disqus_thread">Comments</a></small>
-  <br class="visible-xs-block">
-  </h3>
-  <div style="text-align: justify;">
-    
-    <h4>Visual Studio</h4>
-<p>I have been a Visual Studio user for many years so trying out Visual Studio 11, isn’t a big surprise. I like the restyle that VS11 has received doesn’t encourage me to run out and get add-on to get VS theme add-on. As for C++ coding sadly I haven't had much time to see what the changes are but general functionality seems more stable such as intelligence, highlighting and the right click goto&nbsp; definition. This functionality was broken in Visual Studio 2010, taking forever to find a definition in the same file. I also noticed a considerable improvement in compilation time, rebuild of my un-optimised(e.g. not precompiled header) library was greatly improved.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/c_cpp_vs11_ide.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="c_cpp_vs11_ide" alt="c_cpp_vs11_ide" src="http://stuartjames.info/Data/Sites/5/media/wlw/c_cpp_vs11_ide_thumb.png" width="640" height="372" /></a></p>
-<p align="center"><em>Example code: clapack</em></p>
-<h4>Aptana Studio (for PHP and JS)</h4>
-<p>I have started doing increasing amounts of web development for projects I am working on. Writing mark-up tools search systems and generally are all Ajax enabled with DOM. All my backend API is written in PHP although I may get tempted to change this at some point, but writing and managing the code has been a bit of a pain. Visual Studio has little(via add on) to no support for PHP and most other tools have out-dated versions of support for JS and HTML, not including the HTML5 draft standard. No obvious IDE has resorted in me abusing editors like notepad, programmers notepad, gedit, geany although all great for editing files not really designed for proper coding.</p>
-<p>So over time I have played with a few different IDE’s including Eclipse with add-ons. Never really settling into one that I liked for long and often returning back to my trusty friends the editors. But I think I may have found a hit, Aptana Studio (modded eclipse) seems to be a nice environment for writing JS code especially.</p>
-<p><a href="http://stuartjames.info/Journal/Data/Sites/5/media/wlw/php_aptana_ide.png"><img style="display: block; float: none; margin-left: auto; margin-right: auto" title="php_aptana_ide" alt="php_aptana_ide" src="http://stuartjames.info/Data/Sites/5/media/wlw/php_aptana_ide_thumb.png" width="640" height="372" /></a></p>
-<p align="center"><em>Example code: secret-ish project ;)</em></p>
-<p>A lot of functionality works well, auto complete function descriptions jump to file. Oh and good layout of windows (always a must in my book). Works through the multiple languages html,js,php so is a nice IDE. I have to use it for a few more weeks but I think this one is a keeper!</p>
-<p><br /><a href="http://stuartjames.info/Journal/ide-experiments.aspx">Stuart James</a>  <a href="http://stuartjames.info/Journal/ide-experiments.aspx">…</a></p>
-
-  </div>
-  <br class="visible-xs-block">
-
-<!-- Post List End -->
+            </div>
           
         </div>
 
@@ -425,7 +551,7 @@ $(window).scroll(toggleNavCollapse);$(function(){$("a.page-scroll").bind("click"
 <script>
 function addTohistory() {
   if (!window.location.host.startsWith("127.0.0.1")) {
-    history.pushState({}, 'Blog', 'http://stuart-james.com/blog/page14/');
+    history.pushState({}, 'Blog', '/blog/page14/');
   }
 }
 </script>
